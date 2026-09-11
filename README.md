@@ -140,6 +140,26 @@ Not at this time.
 
 ---
 
+## Credits
+
+This project stands on the shoulders of these amazing projects and people:
+
+| Project | Author | Used for | License |
+|---|---|---|---|
+| [PSXRecomp](https://github.com/mstan/psxrecomp) | Matthew Stan | The PlayStation static recompiler and hardware-accurate runtime this port is built on | PolyForm Noncommercial 1.0.0 |
+| [Parasite Eve II Decompilation](https://github.com/GabeRealB/parasite-eve-2-decomp) | GabeRealB and contributors | Game file formats, asset extraction tools, symbols and room names | CC0 1.0 |
+| [DuckStation](https://github.com/stenzek/duckstation) | Stenzek | Reference for texture replacement naming and MDEC decoding, so DuckStation texture packs work as-is | CC BY-NC-ND 4.0 |
+| [Beetle PSX](https://github.com/libretro/beetle-psx-libretro) | libretro, based on Mednafen | Accuracy reference used by PSXRecomp | GPL-2.0 |
+| PGXP | iCatButler | Original geometry precision technique | — |
+| [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth and contributors | Hardware and file archive documentation | — |
+
+Libraries: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
+[stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) and [zlib](https://zlib.net).
+
+HD Remaster pack and project: **faligame**.
+
+---
+
 ## Legal
 
 This is a non-commercial fan project and is not affiliated with, endorsed by or sponsored by Square Enix.

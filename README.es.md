@@ -141,6 +141,26 @@ Por ahora no.
 
 ---
 
+## Créditos
+
+Este proyecto se apoya en estos proyectos y personas increíbles:
+
+| Proyecto | Autor | Para qué se usa | Licencia |
+|---|---|---|---|
+| [PSXRecomp](https://github.com/mstan/psxrecomp) | Matthew Stan | El recompilador estático de PlayStation y el runtime fiel al hardware sobre el que se construye esta versión | PolyForm Noncommercial 1.0.0 |
+| [Descompilación de Parasite Eve II](https://github.com/GabeRealB/parasite-eve-2-decomp) | GabeRealB y colaboradores | Formatos de archivo del juego, herramientas de extracción, símbolos y nombres de salas | CC0 1.0 |
+| [DuckStation](https://github.com/stenzek/duckstation) | Stenzek | Referencia para los nombres de reemplazo de texturas y la decodificación MDEC, para que los packs de DuckStation funcionen tal cual | CC BY-NC-ND 4.0 |
+| [Beetle PSX](https://github.com/libretro/beetle-psx-libretro) | libretro, basado en Mednafen | Referencia de precisión usada por PSXRecomp | GPL-2.0 |
+| PGXP | iCatButler | Técnica original de precisión de geometría | — |
+| [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth y colaboradores | Documentación del hardware y de los contenedores de archivos | — |
+
+Librerías: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
+[stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) y [zlib](https://zlib.net).
+
+Pack HD Remaster y proyecto: **faligame**.
+
+---
+
 ## Aviso legal
 
 Este es un proyecto fan sin ánimo de lucro y no está afiliado, respaldado ni patrocinado por Square Enix.
