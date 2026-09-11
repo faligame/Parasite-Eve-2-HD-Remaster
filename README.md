@@ -55,12 +55,16 @@ builds or any game data.
 
 ## Before and after
 
-<p align="center">
-  <img src="media/comparisons/01_background.jpg" alt="Background: PS1 original vs HD" width="100%"><br>
-  <img src="media/comparisons/02_characters.jpg" alt="Characters: PS1 original vs HD" width="100%"><br>
-  <img src="media/comparisons/03_menu.jpg" alt="Menu: PS1 original vs HD" width="100%"><br>
-  <img src="media/comparisons/04_geometry.jpg" alt="Geometry: PS1 wobble vs PGXP" width="100%">
-</p>
+<table>
+  <tr>
+    <td align="center"><img src="media/comparisons/01_background.webp" alt="Background: PS1 original vs HD"><br><b>Backgrounds</b></td>
+    <td align="center"><img src="media/comparisons/02_characters.webp" alt="Characters: PS1 original vs HD"><br><b>Characters</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="media/comparisons/03_menu.webp" alt="Menu: PS1 original vs HD"><br><b>Menus and HUD</b></td>
+    <td align="center"><img src="media/comparisons/04_geometry.webp" alt="Geometry: PS1 wobble vs PGXP"><br><b>Geometry (PGXP)</b></td>
+  </tr>
+</table>
 
 ---
 

@@ -55,12 +55,16 @@ ejecutables ni datos del juego.
 
 ## Antes y después
 
-<p align="center">
-  <img src="media/comparisons/01_background.jpg" alt="Fondo: PS1 original frente a HD" width="100%"><br>
-  <img src="media/comparisons/02_characters.jpg" alt="Personajes: PS1 original frente a HD" width="100%"><br>
-  <img src="media/comparisons/03_menu.jpg" alt="Menú: PS1 original frente a HD" width="100%"><br>
-  <img src="media/comparisons/04_geometry.jpg" alt="Geometría: temblor de PS1 frente a PGXP" width="100%">
-</p>
+<table>
+  <tr>
+    <td align="center"><img src="media/comparisons/01_background.webp" alt="Fondo: PS1 original frente a HD"><br><b>Fondos</b></td>
+    <td align="center"><img src="media/comparisons/02_characters.webp" alt="Personajes: PS1 original frente a HD"><br><b>Personajes</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="media/comparisons/03_menu.webp" alt="Menú: PS1 original frente a HD"><br><b>Menús y HUD</b></td>
+    <td align="center"><img src="media/comparisons/04_geometry.webp" alt="Geometría: temblor de PS1 frente a PGXP"><br><b>Geometría (PGXP)</b></td>
+  </tr>
+</table>
 
 ---
 
