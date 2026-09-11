@@ -70,7 +70,7 @@ builds or any game data.
 - **Static recompilation** of the original game into a native Windows executable. No emulator required.
 - **High internal resolution** rendering for sharp 3D models.
 - **PGXP geometry precision**: no more wobbling polygons or warping textures.
-- **60 FPS** gameplay.
+- **60 Hz** output with the original **30 FPS** gameplay. **60 FPS coming soon.**
 
 ### 🎨 HD Remaster
 - **HD pre-rendered backgrounds** at 1440×1080, including the backgrounds streamed in strips during in-game scenes.
@@ -95,6 +95,7 @@ builds or any game data.
 | 🚧 | Completing the HD background pack |
 | 🚧 | Remastered characters, enemies and weapons |
 | 🚧 | Remastered HUD, menus and item icons |
+| 🔜 | **60 FPS** gameplay |
 | 🔜 | **Native widescreen (16:9)** |
 | 🔜 | **Enhanced FMVs** in high resolution |
 | 🔜 | Public release |

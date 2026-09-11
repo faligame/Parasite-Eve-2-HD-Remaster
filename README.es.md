@@ -70,7 +70,7 @@ ejecutables ni datos del juego.
 - **Recompilación estática** del juego original en un ejecutable nativo de Windows. Sin emulador.
 - **Renderizado a alta resolución interna** para modelos 3D nítidos.
 - **Precisión de geometría PGXP**: se acabaron los polígonos que tiemblan y las texturas que se deforman.
-- Juego a **60 FPS**.
+- Salida a **60 Hz** con el juego original a **30 FPS**. **60 FPS próximamente.**
 
 ### 🎨 Remasterización HD
 - **Fondos prerrenderizados en HD** a 1440×1080, incluidos los que se cargan por tiras durante las escenas del juego.
@@ -96,6 +96,7 @@ ejecutables ni datos del juego.
 | 🚧 | Completar el pack de fondos HD |
 | 🚧 | Personajes, enemigos y armas remasterizados |
 | 🚧 | HUD, menús e iconos de objetos remasterizados |
+| 🔜 | Juego a **60 FPS** |
 | 🔜 | **Pantalla panorámica nativa (16:9)** |
 | 🔜 | **FMV mejorados** en alta resolución |
 | 🔜 | Lanzamiento público |
