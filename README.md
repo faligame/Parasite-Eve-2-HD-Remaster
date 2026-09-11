@@ -37,19 +37,19 @@ builds or any game data.
 
 <table>
   <tr>
-    <td><img src="media/screenshots/01_title_screen.jpg" alt="Title screen"></td>
-    <td><img src="media/screenshots/02_akropolis.jpg" alt="Akropolis Tower"></td>
-    <td><img src="media/screenshots/03_mist_shooting_gallery.jpg" alt="MIST shooting gallery"></td>
+    <td><img src="media/screenshots/01_title_screen.png" alt="Title screen"></td>
+    <td><img src="media/screenshots/02_akropolis.png" alt="Akropolis Tower"></td>
+    <td><img src="media/screenshots/03_mist_shooting_gallery.png" alt="MIST shooting gallery"></td>
   </tr>
   <tr>
-    <td><img src="media/screenshots/04_dryfield.jpg" alt="Dryfield"></td>
-    <td><img src="media/screenshots/05_shelter.jpg" alt="Shelter"></td>
-    <td><img src="media/screenshots/06_neo_ark.jpg" alt="Neo Ark"></td>
+    <td><img src="media/screenshots/04_dryfield.png" alt="Dryfield"></td>
+    <td><img src="media/screenshots/05_shelter.png" alt="Shelter"></td>
+    <td><img src="media/screenshots/06_neo_ark.png" alt="Neo Ark"></td>
   </tr>
   <tr>
-    <td><img src="media/screenshots/07_combat_hud.jpg" alt="Combat and HUD"></td>
-    <td><img src="media/screenshots/08_menu_inventory.jpg" alt="Menu and inventory"></td>
-    <td><img src="media/screenshots/09_character_closeup.jpg" alt="Aya close-up"></td>
+    <td><img src="media/screenshots/07_combat_hud.png" alt="Combat and HUD"></td>
+    <td><img src="media/screenshots/08_menu_inventory.png" alt="Menu and inventory"></td>
+    <td><img src="media/screenshots/09_character_closeup.png" alt="Aya close-up"></td>
   </tr>
 </table>
 
@@ -116,7 +116,7 @@ builds or any game data.
 ## Coming next: widescreen
 
 <p align="center">
-  <img src="media/widescreen_preview.jpg" alt="Widescreen preview" width="100%">
+  <img src="media/widescreen_preview.png" alt="Widescreen preview" width="100%">
 </p>
 
 The goal is a **native 16:9 mode** that renders more of each scene instead of stretching the 4:3 image.

@@ -37,19 +37,19 @@ ejecutables ni datos del juego.
 
 <table>
   <tr>
-    <td><img src="media/screenshots/01_title_screen.jpg" alt="Pantalla de título"></td>
-    <td><img src="media/screenshots/02_akropolis.jpg" alt="Torre Akropolis"></td>
-    <td><img src="media/screenshots/03_mist_shooting_gallery.jpg" alt="Galería de tiro del MIST"></td>
+    <td><img src="media/screenshots/01_title_screen.png" alt="Pantalla de título"></td>
+    <td><img src="media/screenshots/02_akropolis.png" alt="Torre Akropolis"></td>
+    <td><img src="media/screenshots/03_mist_shooting_gallery.png" alt="Galería de tiro del MIST"></td>
   </tr>
   <tr>
-    <td><img src="media/screenshots/04_dryfield.jpg" alt="Dryfield"></td>
-    <td><img src="media/screenshots/05_shelter.jpg" alt="Refugio"></td>
-    <td><img src="media/screenshots/06_neo_ark.jpg" alt="Neo Ark"></td>
+    <td><img src="media/screenshots/04_dryfield.png" alt="Dryfield"></td>
+    <td><img src="media/screenshots/05_shelter.png" alt="Refugio"></td>
+    <td><img src="media/screenshots/06_neo_ark.png" alt="Neo Ark"></td>
   </tr>
   <tr>
-    <td><img src="media/screenshots/07_combat_hud.jpg" alt="Combate y HUD"></td>
-    <td><img src="media/screenshots/08_menu_inventory.jpg" alt="Menú e inventario"></td>
-    <td><img src="media/screenshots/09_character_closeup.jpg" alt="Primer plano de Aya"></td>
+    <td><img src="media/screenshots/07_combat_hud.png" alt="Combate y HUD"></td>
+    <td><img src="media/screenshots/08_menu_inventory.png" alt="Menú e inventario"></td>
+    <td><img src="media/screenshots/09_character_closeup.png" alt="Primer plano de Aya"></td>
   </tr>
 </table>
 
@@ -117,7 +117,7 @@ ejecutables ni datos del juego.
 ## Próximamente: pantalla panorámica
 
 <p align="center">
-  <img src="media/widescreen_preview.jpg" alt="Vista previa panorámica" width="100%">
+  <img src="media/widescreen_preview.png" alt="Vista previa panorámica" width="100%">
 </p>
 
 El objetivo es un **modo 16:9 nativo** que muestre más de cada escena en lugar de estirar la imagen 4:3.
