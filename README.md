@@ -73,8 +73,22 @@ builds or any game data.
 ### 🖥️ Native PC version
 - **Static recompilation** of the original game into a native Windows executable. No emulator required.
 - **High internal resolution** rendering for sharp 3D models.
-- **PGXP geometry precision**: no more wobbling polygons or warping textures.
-- **60 Hz** output with the original **30 FPS** gameplay. **60 FPS coming soon.**
+- **PGXP geometry precision**: no more wobbling polygons or warping textures, and precise polygon culling so distant
+  characters no longer lose triangles.
+- **60 FPS gameplay** (experimental): the game logic still runs at its original 30 FPS, but the renderer builds an
+  intermediate frame with every 3D polygon halfway between two game frames. Characters and enemies move at 60 FPS
+  with no added input lag; text, HUD, videos and camera cuts are untouched.
+
+### 🇪🇸 Complete Spanish localization
+- The disc already had Spanish dialogue; the **menu labels** (Item, Status, Key Item, Equip...) and the **weapon,
+  ammo and armor sheets** that were still in English are now translated, without modifying the disc.
+
+### 🎮 Options and quality of life
+- **Quality of life toggles**: no flash at the start of a battle, auto-closing battle results, quick weapon draw,
+  ammo visible out of battle, and more.
+- **Classic GameShark cheats** (infinite health, ammo, all key items, Parasite Energy levels, outfits...) adapted to
+  this build and switchable from the launcher.
+- **Room teleport (debug)**: pick any stage and room from an on-screen selector and jump to it through any door.
 
 ### 🎨 HD Remaster
 - **HD pre-rendered backgrounds** at 1440×1080, including the backgrounds streamed in strips during in-game scenes.
@@ -83,6 +97,10 @@ builds or any game data.
 - **HD foreground layers** generated from the HD backgrounds, so objects in front of the characters match the new art.
 - **Remastered textures** for characters, enemies, weapons, HUD and menus.
 - **Compatible with DuckStation texture packs**: existing `texpage-*` and `vram-write-*` replacements work as-is.
+- **Made for texture artists**: replacements are named after the game's own files (`bs_N.png` backgrounds,
+  `pe2img_N.png` images), the pack **reloads while the game is running** (save a PNG and see it in-game instantly),
+  and a color gallery of every image on the disc plus an identification tool for DuckStation dumps keep track of what
+  is done, in progress and missing.
 
 ---
 
@@ -96,10 +114,14 @@ builds or any game data.
 | ✅ | HD text boxes and freeze-frames |
 | ✅ | HD texture replacement engine (per game image, per palette, DuckStation compatible) |
 | ✅ | Automatic HD foreground layers |
+| ✅ | **60 FPS** gameplay by polygon interpolation (experimental) |
+| ✅ | Precise polygon culling (PGXP) |
+| ✅ | Complete Spanish localization (menus and item sheets) |
+| ✅ | Quality of life options, cheats and room teleport |
+| ✅ | Hot reload of the HD pack and disc-named textures for artists |
 | 🚧 | Completing the HD background pack |
 | 🚧 | Remastered characters, enemies and weapons |
 | 🚧 | Remastered HUD, menus and item icons |
-| 🔜 | **60 FPS** gameplay |
 | 🔜 | **Native widescreen (16:9)** |
 | 🔜 | **Enhanced FMVs** in high resolution |
 | 🔜 | Public release |
@@ -110,6 +132,25 @@ builds or any game data.
 |---|---:|---:|---|
 | Pre-rendered backgrounds | 1,328 | 1,759 | ![75%](https://img.shields.io/badge/75%25-2ee6d2?style=flat-square) |
 | Game images (characters, HUD, menus, foregrounds) | 864 | 1,453 | ![59%](https://img.shields.io/badge/59%25-2ee6d2?style=flat-square) |
+
+---
+
+## News
+
+**2026-09-14 — 60 FPS, precise culling, Spanish menus and tools**
+- **60 FPS gameplay** (experimental). Forcing the game to run at 60 doubled its speed, so instead the renderer records
+  every polygon of each game frame and composes an intermediate frame with the 3D geometry halfway between two frames.
+  It matches polygons by texture coordinates, keeps text and UI still, and switches itself off on camera cuts, loads,
+  frozen screens and videos. No extra input latency.
+- **Precise culling**: distant characters lost triangles because the PlayStation decides visibility on integer
+  coordinates. The GTE now keeps sub-pixel precision through the game's own vertex reloads, and every culling decision
+  is made with it.
+- **Spanish menus and item sheets**: the last English strings (menu labels, ammo and armor sheets) are translated in
+  memory and on the fly when read from the disc, so the game files stay untouched.
+- **Cheats and quality of life**: 25 GameShark codes ported to this build, plus "no battle flash", "auto-close battle
+  results", quick draw, ammo out of battle and a debug room teleport.
+- **For artists**: the HD pack is now split into *final*, *in progress* and *missing*, files use the disc's own names,
+  and the game reloads any PNG the moment it is saved.
 
 ---
 

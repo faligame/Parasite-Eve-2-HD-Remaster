@@ -73,8 +73,23 @@ ejecutables ni datos del juego.
 ### 🖥️ Versión nativa para PC
 - **Recompilación estática** del juego original en un ejecutable nativo de Windows. Sin emulador.
 - **Renderizado a alta resolución interna** para modelos 3D nítidos.
-- **Precisión de geometría PGXP**: se acabaron los polígonos que tiemblan y las texturas que se deforman.
-- Salida a **60 Hz** con el juego original a **30 FPS**. **60 FPS próximamente.**
+- **Precisión de geometría PGXP**: se acabaron los polígonos que tiemblan y las texturas que se deforman, y un
+  recorte de polígonos preciso para que los personajes lejanos no pierdan triángulos.
+- **Juego a 60 FPS** (experimental): la lógica sigue a sus 30 FPS originales, pero el renderizador compone un
+  fotograma intermedio con cada polígono 3D a medio camino entre dos fotogramas del juego. Personajes y enemigos se
+  mueven a 60 FPS sin retraso añadido; texto, HUD, vídeos y cambios de cámara quedan intactos.
+
+### 🇪🇸 Localización completa al castellano
+- El disco ya tenía los diálogos en castellano; las **etiquetas de los menús** (Item, Status, Key Item, Equip...) y las
+  **fichas de armas, munición y protecciones** que seguían en inglés están ahora traducidas, sin modificar el disco.
+
+### 🎮 Opciones y comodidad
+- **Mejoras de comodidad**: sin destello al empezar el combate, cierre automático de los resultados del combate,
+  desenfundado rápido, munición visible fuera de combate y más.
+- **Trucos clásicos de GameShark** (salud infinita, munición, todos los objetos clave, niveles de Parasite Energy,
+  trajes...) adaptados a esta versión y activables desde el lanzador.
+- **Teletransporte de salas (debug)**: elige cualquier stage y sala en un selector en pantalla y salta a ella por
+  cualquier puerta.
 
 ### 🎨 Remasterización HD
 - **Fondos prerrenderizados en HD** a 1440×1080, incluidos los que se cargan por tiras durante las escenas del juego.
@@ -84,6 +99,10 @@ ejecutables ni datos del juego.
   coincidan con el nuevo arte.
 - **Texturas remasterizadas** de personajes, enemigos, armas, HUD y menús.
 - **Compatible con packs de texturas de DuckStation**: los reemplazos `texpage-*` y `vram-write-*` funcionan tal cual.
+- **Pensado para quien hace texturas**: los reemplazos se llaman como los ficheros del propio juego (fondos
+  `bs_N.png`, imágenes `pe2img_N.png`), el pack **se recarga con el juego abierto** (guardas un PNG y lo ves al
+  instante), y una galería en color de todas las imágenes del disco más una herramienta que identifica los volcados de
+  DuckStation llevan la cuenta de lo hecho, lo que está en proceso y lo que falta.
 
 ---
 
@@ -97,10 +116,14 @@ ejecutables ni datos del juego.
 | ✅ | Cuadros de texto y pantallas congeladas en HD |
 | ✅ | Motor de reemplazo de texturas HD (por imagen del juego, por paleta, compatible con DuckStation) |
 | ✅ | Capas de primer plano HD automáticas |
+| ✅ | Juego a **60 FPS** por interpolación de polígonos (experimental) |
+| ✅ | Recorte de polígonos preciso (PGXP) |
+| ✅ | Localización completa al castellano (menús y fichas de objetos) |
+| ✅ | Opciones de comodidad, trucos y teletransporte de salas |
+| ✅ | Recarga en caliente del pack HD y texturas con nombres del disco |
 | 🚧 | Completar el pack de fondos HD |
 | 🚧 | Personajes, enemigos y armas remasterizados |
 | 🚧 | HUD, menús e iconos de objetos remasterizados |
-| 🔜 | Juego a **60 FPS** |
 | 🔜 | **Pantalla panorámica nativa (16:9)** |
 | 🔜 | **FMV mejorados** en alta resolución |
 | 🔜 | Lanzamiento público |
@@ -111,6 +134,25 @@ ejecutables ni datos del juego.
 |---|---:|---:|---|
 | Fondos prerrenderizados | 1.328 | 1.759 | ![75%](https://img.shields.io/badge/75%25-2ee6d2?style=flat-square) |
 | Imágenes del juego (personajes, HUD, menús, primeros planos) | 864 | 1.453 | ![59%](https://img.shields.io/badge/59%25-2ee6d2?style=flat-square) |
+
+---
+
+## Novedades
+
+**14-09-2026 — 60 FPS, recorte preciso, menús en castellano y herramientas**
+- **Juego a 60 FPS** (experimental). Forzar el juego a 60 lo ponía al doble de velocidad, así que el renderizador graba
+  todos los polígonos de cada fotograma y compone uno intermedio con la geometría 3D a medio camino entre dos
+  fotogramas. Empareja los polígonos por sus coordenadas de textura, deja quietos el texto y el UI, y se desactiva solo
+  en cambios de cámara, cargas, pantallas congeladas y vídeos. Sin retraso añadido en los mandos.
+- **Recorte preciso**: los personajes lejanos perdían triángulos porque la PlayStation decide la visibilidad con
+  coordenadas enteras. El GTE conserva ahora la precisión subpíxel a través de las recargas de vértices del propio
+  juego, y cada decisión de recorte se toma con ella.
+- **Menús y fichas en castellano**: las últimas cadenas en inglés (etiquetas de menú, fichas de munición y
+  protecciones) se traducen en memoria y al vuelo cuando se leen del disco, sin tocar los ficheros del juego.
+- **Trucos y comodidad**: 25 códigos GameShark adaptados a esta versión, más "sin destello al empezar el combate",
+  "cierre automático de resultados", desenfundado rápido, munición fuera de combate y un teletransporte de salas.
+- **Para quien hace texturas**: el pack HD se divide ahora en *final*, *en proceso* y *faltantes*, los ficheros usan
+  los nombres del disco y el juego recarga cualquier PNG en cuanto se guarda.
 
 ---
 
