@@ -66,34 +66,71 @@ builds or any game data.
   </tr>
 </table>
 
+## In-game menus
+
+Both menus are drawn with the game's own panels, frames, font and cursor, so they feel like part of the original game.
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="media/screenshots/09_extra_options.png" alt="Remaster options menu"><br><b>Remaster options</b><br>Opens from <b>Options</b> in the main menu</td>
+    <td align="center" width="50%"><img src="media/screenshots/10_saveload_states_menu.png" alt="Save states menu"><br><b>Save states</b><br><b>SELECT + R1</b> on the controller</td>
+  </tr>
+</table>
+
 ---
 
 ## Features
 
 ### 🖥️ Native PC version
 - **Static recompilation** of the original game into a native Windows executable. No emulator required.
-- **High internal resolution** rendering for sharp 3D models.
+- **High internal resolution** rendering for sharp 3D models, up to **4K**.
 - **PGXP geometry precision**: no more wobbling polygons or warping textures, and precise polygon culling so distant
   characters no longer lose triangles.
 - **60 FPS gameplay** (experimental): the game logic still runs at its original 30 FPS, but the renderer builds an
   intermediate frame with every 3D polygon halfway between two game frames. Characters and enemies move at 60 FPS
   with no added input lag; text, HUD, videos and camera cuts are untouched.
+- **FXAA antialiasing** on the game image, leaving text, menus and videos crisp.
+
+### ⚙️ Remaster options menu
+- Opens from **Options** in the main menu, before you start playing.
+- **Original mode**: the game exactly as it was on PlayStation, with a choice of sharp or smooth texture and video
+  filtering. **HD mode**: every enhancement enabled.
+- Internal resolution (**Original, HD, Full HD, 4K**), HD textures, HD videos, FXAA, scanlines, 60 FPS, fullscreen and
+  window size.
+- **Faster loads** in HD mode: doors and camera changes load in a fraction of the time, with music and cutscenes still
+  in sync.
+- When a change needs a restart, the game **saves it and restarts by itself**.
+
+### ⚡ Game boosters
+Inspired by the quality-of-life boosters Square Enix added to its modern re-releases of classics like
+**FINAL FANTASY VII**, they are toggled at any time with the controller, and every active booster stays on screen as an
+icon in the top-right corner.
+
+<table>
+  <tr>
+    <td align="center" width="33%"><img src="media/icons/speed_x4.png" alt="Speed x4" width="80"><br><b>Speed x4</b><br>Hold <b>L2</b> (or Tab on the keyboard)</td>
+    <td align="center" width="33%"><img src="media/icons/hp_infinite.png" alt="Infinite HP" width="80"><br><b>Infinite HP</b><br><b>SELECT + ✕</b></td>
+    <td align="center" width="33%"><img src="media/icons/mp_infinite.png" alt="Infinite MP" width="80"><br><b>Infinite MP</b><br><b>SELECT + □</b></td>
+  </tr>
+</table>
+
+Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○** keeps EXP at 6000 to upgrade Aya.
+
+### 💾 Save states and single disc
+- **Save states menu** with 12 slots, a thumbnail and the date of each save (**SELECT + R1**).
+- **Single-disc experience**: both discs play as one game. When the story moves on to disc 2, or you continue a disc 2
+  save from the title screen, the disc is swapped instantly and the disc change screen never appears.
+- **Exit** in the pause menu closes the game.
 
 ### 🇪🇸 Complete Spanish localization
 - The disc already had Spanish dialogue; the **menu labels** (Item, Status, Key Item, Equip...) and the **weapon,
   ammo and armor sheets** that were still in English are now translated, without modifying the disc.
-
-### 🎮 Options and quality of life
-- **Quality of life toggles**: no flash at the start of a battle, auto-closing battle results, quick weapon draw,
-  ammo visible out of battle, and more.
-- **Classic GameShark cheats** (infinite health, ammo, all key items, Parasite Energy levels, outfits...) adapted to
-  this build and switchable from the launcher.
-- **Room teleport (debug)**: pick any stage and room from an on-screen selector and jump to it through any door.
+- On-screen messages (saves, speed, window mode) are shown in a window with the game's own style.
 
 ### 🎨 HD Remaster
 - **HD pre-rendered backgrounds** at 1440×1080, including the backgrounds streamed in strips during in-game scenes.
-- **Text boxes and door transitions stay in HD.** The original game froze the screen at 320×240 whenever a message
-  appeared; the remaster keeps the full resolution.
+- **Text boxes, door transitions, screen shakes and the battle start flash stay in HD.** The original game froze the
+  screen at 320×240 in all of them; the remaster keeps the full resolution.
 - **HD foreground layers** generated from the HD backgrounds, so objects in front of the characters match the new art.
 - **Remastered textures** for characters, enemies, weapons, HUD and menus.
 - **Compatible with DuckStation texture packs**: existing `texpage-*` and `vram-write-*` replacements work as-is.
@@ -109,21 +146,26 @@ builds or any game data.
 | Status | Feature |
 |:---:|---|
 | ✅ | Native Windows executable (static recompilation) |
-| ✅ | High resolution rendering and PGXP geometry precision |
+| ✅ | High resolution rendering (up to 4K) and PGXP geometry precision |
 | ✅ | HD background replacement engine |
-| ✅ | HD text boxes and freeze-frames |
+| ✅ | HD text boxes, freeze-frames, screen shakes and battle flash |
 | ✅ | HD texture replacement engine (per game image, per palette, DuckStation compatible) |
 | ✅ | Automatic HD foreground layers |
 | ✅ | **60 FPS** gameplay by polygon interpolation (experimental) |
 | ✅ | Precise polygon culling (PGXP) |
+| ✅ | FXAA antialiasing |
 | ✅ | Complete Spanish localization (menus and item sheets) |
-| ✅ | Quality of life options, cheats and room teleport |
+| ✅ | **Remaster options menu** with Original and HD modes |
+| ✅ | **Game boosters**: speed x4, infinite HP and MP, max BP and EXP |
+| ✅ | **Save states menu** with thumbnails |
+| ✅ | **Single-disc experience** (no disc change screen) |
+| ✅ | Faster loads on doors and camera changes |
 | ✅ | Hot reload of the HD pack and disc-named textures for artists |
 | 🚧 | Completing the HD background pack |
 | 🚧 | Remastered characters, enemies and weapons |
 | 🚧 | Remastered HUD, menus and item icons |
+| 🚧 | **Enhanced FMVs** in high resolution |
 | 🔜 | **Native widescreen (16:9)** |
-| 🔜 | **Enhanced FMVs** in high resolution |
 | 🔜 | Public release |
 
 ### HD pack progress
@@ -137,6 +179,18 @@ builds or any game data.
 
 ## News
 
+**2026-09-15 — Remaster options menu, game boosters, save states and a single disc**
+- **Remaster options menu** inside the game, opened from Options in the main menu and drawn with the game's own style:
+  Original or HD mode, resolution up to 4K, HD textures and videos, FXAA, scanlines, 60 FPS and window options. The game
+  restarts by itself to apply changes that need it.
+- **Game boosters** inspired by Square Enix's re-releases such as FINAL FANTASY VII: hold L2 for speed x4, and toggle
+  infinite HP, infinite MP, max BP and EXP with SELECT and the face buttons. Active boosters are shown as icons.
+- **Save states menu** redesigned with the game's look: 12 slots with a thumbnail and date.
+- **Single-disc experience**: the runtime swaps discs by itself before the game asks for it, so the disc change screen
+  is gone, also when continuing a disc 2 save or loading a save state.
+- **HD everywhere**: FXAA antialiasing, the black and white battle start flash and boss screen shakes now keep the full
+  resolution, and in-game cutscenes stay in sync with faster door and camera loads.
+
 **2026-09-14 — 60 FPS, precise culling, Spanish menus and tools**
 - **60 FPS gameplay** (experimental). Forcing the game to run at 60 doubled its speed, so instead the renderer records
   every polygon of each game frame and composes an intermediate frame with the 3D geometry halfway between two frames.
@@ -147,8 +201,6 @@ builds or any game data.
   is made with it.
 - **Spanish menus and item sheets**: the last English strings (menu labels, ammo and armor sheets) are translated in
   memory and on the fly when read from the disc, so the game files stay untouched.
-- **Cheats and quality of life**: 25 GameShark codes ported to this build, plus "no battle flash", "auto-close battle
-  results", quick draw, ammo out of battle and a debug room teleport.
 - **For artists**: the HD pack is now split into *final*, *in progress* and *missing*, files use the disc's own names,
   and the game reloads any PNG the moment it is saved.
 
@@ -192,6 +244,7 @@ This project stands on the shoulders of these amazing projects and people:
 | [DuckStation](https://github.com/stenzek/duckstation) | Stenzek | Reference for texture replacement naming and MDEC decoding, so DuckStation texture packs work as-is | CC BY-NC-ND 4.0 |
 | [Beetle PSX](https://github.com/libretro/beetle-psx-libretro) | libretro, based on Mednafen | Accuracy reference used by PSXRecomp | GPL-2.0 |
 | PGXP | iCatButler | Original geometry precision technique | — |
+| FXAA | Timothy Lottes (NVIDIA) | Original fast approximate antialiasing technique | — |
 | [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth and contributors | Hardware and file archive documentation | — |
 
 Libraries: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
@@ -204,5 +257,5 @@ HD Remaster pack and project: **faligame**.
 ## Legal
 
 This is a non-commercial fan project and is not affiliated with, endorsed by or sponsored by Square Enix.
-*Parasite Eve* and *Parasite Eve II* are trademarks of Square Enix Co., Ltd. All game content belongs to its respective owners.
+*Parasite Eve*, *Parasite Eve II* and *FINAL FANTASY VII* are trademarks of Square Enix Co., Ltd. All game content belongs to its respective owners.
 This repository does not contain, and will never distribute, game files, BIOS files or copyrighted game assets.

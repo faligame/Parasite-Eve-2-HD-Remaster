@@ -66,35 +66,72 @@ ejecutables ni datos del juego.
   </tr>
 </table>
 
+## Menús dentro del juego
+
+Los dos menús se dibujan con los paneles, marcos, letras y cursor del propio juego, para que parezcan parte del original.
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="media/screenshots/09_extra_options.png" alt="Menú de opciones del Remaster"><br><b>Opciones del Remaster</b><br>Se abre desde <b>Opciones</b> en el menú principal</td>
+    <td align="center" width="50%"><img src="media/screenshots/10_saveload_states_menu.png" alt="Menú de estados guardados"><br><b>Estados guardados</b><br><b>SELECT + R1</b> en el mando</td>
+  </tr>
+</table>
+
 ---
 
 ## Características
 
 ### 🖥️ Versión nativa para PC
 - **Recompilación estática** del juego original en un ejecutable nativo de Windows. Sin emulador.
-- **Renderizado a alta resolución interna** para modelos 3D nítidos.
+- **Renderizado a alta resolución interna** para modelos 3D nítidos, hasta **4K**.
 - **Precisión de geometría PGXP**: se acabaron los polígonos que tiemblan y las texturas que se deforman, y un
   recorte de polígonos preciso para que los personajes lejanos no pierdan triángulos.
 - **Juego a 60 FPS** (experimental): la lógica sigue a sus 30 FPS originales, pero el renderizador compone un
   fotograma intermedio con cada polígono 3D a medio camino entre dos fotogramas del juego. Personajes y enemigos se
   mueven a 60 FPS sin retraso añadido; texto, HUD, vídeos y cambios de cámara quedan intactos.
+- **Antialiasing FXAA** sobre la imagen del juego, sin emborronar textos, menús ni vídeos.
+
+### ⚙️ Menú de opciones del Remaster
+- Se abre desde **Opciones** en el menú principal, antes de empezar a jugar.
+- **Modo Original**: el juego tal cual era en PlayStation, con filtro nítido o suave para texturas y vídeos.
+  **Modo HD**: todas las mejoras activadas.
+- Resolución interna (**Original, HD, Full HD, 4K**), texturas HD, vídeos HD, FXAA, scanlines, 60 FPS, pantalla
+  completa y tamaño de ventana.
+- **Cargas rápidas** en modo HD: puertas y cambios de cámara cargan en una fracción del tiempo, con la música y las
+  cinemáticas sincronizadas.
+- Si un cambio necesita reiniciar, el juego **lo guarda y se reinicia solo**.
+
+### ⚡ Potenciadores
+Inspirados en los potenciadores de comodidad que Square Enix añadió a las reediciones modernas de clásicos como
+**FINAL FANTASY VII**. Se activan en cualquier momento con el mando y cada potenciador activo queda en pantalla como un
+icono en la esquina superior derecha.
+
+<table>
+  <tr>
+    <td align="center" width="33%"><img src="media/icons/speed_x4.png" alt="Velocidad x4" width="80"><br><b>Velocidad x4</b><br>Mantén <b>L2</b> (o Tab en el teclado)</td>
+    <td align="center" width="33%"><img src="media/icons/hp_infinite.png" alt="PV infinitos" width="80"><br><b>HP infinita</b><br><b>SELECT + ✕</b></td>
+    <td align="center" width="33%"><img src="media/icons/mp_infinite.png" alt="PM infinitos" width="80"><br><b>MP infinita</b><br><b>SELECT + □</b></td>
+  </tr>
+</table>
+
+Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene la EXP en 6000 para mejorar a Aya.
+
+### 💾 Estados guardados y disco único
+- **Menú de estados guardados** con 12 ranuras, miniatura y fecha de cada una (**SELECT + R1**).
+- **Un solo disco**: los dos discos se juegan como un único juego. Cuando la historia pasa al disco 2, o continúas
+  desde el título una partida del disco 2, el disco se cambia al instante y la pantalla de cambio de disco no aparece.
+- **Salir** en el menú de pausa cierra el juego.
 
 ### 🇪🇸 Localización completa al castellano
 - El disco ya tenía los diálogos en castellano; las **etiquetas de los menús** (Item, Status, Key Item, Equip...) y las
   **fichas de armas, munición y protecciones** que seguían en inglés están ahora traducidas, sin modificar el disco.
-
-### 🎮 Opciones y comodidad
-- **Mejoras de comodidad**: sin destello al empezar el combate, cierre automático de los resultados del combate,
-  desenfundado rápido, munición visible fuera de combate y más.
-- **Trucos clásicos de GameShark** (salud infinita, munición, todos los objetos clave, niveles de Parasite Energy,
-  trajes...) adaptados a esta versión y activables desde el lanzador.
-- **Teletransporte de salas (debug)**: elige cualquier stage y sala en un selector en pantalla y salta a ella por
-  cualquier puerta.
+- Los mensajes en pantalla (guardado, velocidad, modo ventana) salen en una ventana con el estilo del propio juego.
 
 ### 🎨 Remasterización HD
 - **Fondos prerrenderizados en HD** a 1440×1080, incluidos los que se cargan por tiras durante las escenas del juego.
-- **Los cuadros de texto y las transiciones de puertas se mantienen en HD.** El juego original congelaba la pantalla a
-  320×240 cada vez que aparecía un mensaje; la remasterización conserva la resolución completa.
+- **Los cuadros de texto, las transiciones de puertas, las sacudidas de pantalla y el destello de entrada al combate se
+  mantienen en HD.** El juego original congelaba la pantalla a 320×240 en todos esos casos; la remasterización
+  conserva la resolución completa.
 - **Capas de primer plano en HD** generadas a partir de los fondos HD, para que los objetos delante de los personajes
   coincidan con el nuevo arte.
 - **Texturas remasterizadas** de personajes, enemigos, armas, HUD y menús.
@@ -111,21 +148,26 @@ ejecutables ni datos del juego.
 | Estado | Característica |
 |:---:|---|
 | ✅ | Ejecutable nativo de Windows (recompilación estática) |
-| ✅ | Renderizado a alta resolución y precisión de geometría PGXP |
+| ✅ | Renderizado a alta resolución (hasta 4K) y precisión de geometría PGXP |
 | ✅ | Motor de reemplazo de fondos HD |
-| ✅ | Cuadros de texto y pantallas congeladas en HD |
+| ✅ | Cuadros de texto, pantallas congeladas, sacudidas y destello de combate en HD |
 | ✅ | Motor de reemplazo de texturas HD (por imagen del juego, por paleta, compatible con DuckStation) |
 | ✅ | Capas de primer plano HD automáticas |
 | ✅ | Juego a **60 FPS** por interpolación de polígonos (experimental) |
 | ✅ | Recorte de polígonos preciso (PGXP) |
+| ✅ | Antialiasing FXAA |
 | ✅ | Localización completa al castellano (menús y fichas de objetos) |
-| ✅ | Opciones de comodidad, trucos y teletransporte de salas |
+| ✅ | **Menú de opciones del Remaster** con modos Original y HD |
+| ✅ | **Potenciadores**: velocidad x4, HP y MP infinitas, BP y EXP al máximo |
+| ✅ | **Menú de estados guardados** con miniaturas |
+| ✅ | **Un solo disco** (sin pantalla de cambio de disco) |
+| ✅ | Cargas rápidas en puertas y cambios de cámara |
 | ✅ | Recarga en caliente del pack HD y texturas con nombres del disco |
 | 🚧 | Completar el pack de fondos HD |
 | 🚧 | Personajes, enemigos y armas remasterizados |
 | 🚧 | HUD, menús e iconos de objetos remasterizados |
+| 🚧 | **FMV mejorados** en alta resolución |
 | 🔜 | **Pantalla panorámica nativa (16:9)** |
-| 🔜 | **FMV mejorados** en alta resolución |
 | 🔜 | Lanzamiento público |
 
 ### Progreso del pack HD
@@ -139,6 +181,20 @@ ejecutables ni datos del juego.
 
 ## Novedades
 
+**15-09-2026 — Menú de opciones del Remaster, potenciadores, estados guardados y un solo disco**
+- **Menú de opciones del Remaster** dentro del juego, desde Opciones en el menú principal y con el estilo del propio
+  juego: modo Original o HD, resolución hasta 4K, texturas y vídeos HD, FXAA, scanlines, 60 FPS y opciones de ventana.
+  El juego se reinicia solo para aplicar los cambios que lo necesitan.
+- **Potenciadores** inspirados en las reediciones de Square Enix como FINAL FANTASY VII: mantén L2 para jugar a
+  velocidad x4 y activa HP infinita, MP infinita, BP y EXP al máximo con SELECT y los botones de acción. Los
+  potenciadores activos se muestran como iconos.
+- **Menú de estados guardados** rediseñado con el aspecto del juego: 12 ranuras con miniatura y fecha.
+- **Un solo disco**: el runtime cambia de disco por su cuenta antes de que el juego lo pida, así que la pantalla de
+  cambio de disco desaparece, también al continuar una partida del disco 2 o al cargar un estado guardado.
+- **HD en todas partes**: antialiasing FXAA, el destello en blanco y negro al empezar el combate y las sacudidas de
+  pantalla de los jefes conservan la resolución completa, y las cinemáticas siguen sincronizadas con las cargas rápidas
+  de puertas y cámaras.
+
 **14-09-2026 — 60 FPS, recorte preciso, menús en castellano y herramientas**
 - **Juego a 60 FPS** (experimental). Forzar el juego a 60 lo ponía al doble de velocidad, así que el renderizador graba
   todos los polígonos de cada fotograma y compone uno intermedio con la geometría 3D a medio camino entre dos
@@ -149,8 +205,6 @@ ejecutables ni datos del juego.
   juego, y cada decisión de recorte se toma con ella.
 - **Menús y fichas en castellano**: las últimas cadenas en inglés (etiquetas de menú, fichas de munición y
   protecciones) se traducen en memoria y al vuelo cuando se leen del disco, sin tocar los ficheros del juego.
-- **Trucos y comodidad**: 25 códigos GameShark adaptados a esta versión, más "sin destello al empezar el combate",
-  "cierre automático de resultados", desenfundado rápido, munición fuera de combate y un teletransporte de salas.
 - **Para quien hace texturas**: el pack HD se divide ahora en *final*, *en proceso* y *faltantes*, los ficheros usan
   los nombres del disco y el juego recarga cualquier PNG en cuanto se guarda.
 
@@ -194,6 +248,7 @@ Este proyecto se apoya en estos proyectos y personas increíbles:
 | [DuckStation](https://github.com/stenzek/duckstation) | Stenzek | Referencia para los nombres de reemplazo de texturas y la decodificación MDEC, para que los packs de DuckStation funcionen tal cual | CC BY-NC-ND 4.0 |
 | [Beetle PSX](https://github.com/libretro/beetle-psx-libretro) | libretro, basado en Mednafen | Referencia de precisión usada por PSXRecomp | GPL-2.0 |
 | PGXP | iCatButler | Técnica original de precisión de geometría | — |
+| FXAA | Timothy Lottes (NVIDIA) | Técnica original de antialiasing aproximado rápido | — |
 | [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth y colaboradores | Documentación del hardware y de los contenedores de archivos | — |
 
 Librerías: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
@@ -206,5 +261,5 @@ Pack HD Remaster y proyecto: **faligame**.
 ## Aviso legal
 
 Este es un proyecto fan sin ánimo de lucro y no está afiliado, respaldado ni patrocinado por Square Enix.
-*Parasite Eve* y *Parasite Eve II* son marcas registradas de Square Enix Co., Ltd. Todo el contenido del juego pertenece a sus respectivos propietarios.
+*Parasite Eve*, *Parasite Eve II* y *FINAL FANTASY VII* son marcas registradas de Square Enix Co., Ltd. Todo el contenido del juego pertenece a sus respectivos propietarios.
 Este repositorio no contiene ni distribuirá nunca archivos del juego, BIOS ni recursos del juego protegidos por derechos de autor.
