@@ -122,9 +122,16 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
   desde el título una partida del disco 2, el disco se cambia al instante y la pantalla de cambio de disco no aparece.
 - **Salir** en el menú de pausa cierra el juego.
 
-### 🇪🇸 Localización completa al castellano
-- El disco ya tenía los diálogos en castellano; las **etiquetas de los menús** (Item, Status, Key Item, Equip...) y las
-  **fichas de armas, munición y protecciones** que seguían en inglés están ahora traducidas, sin modificar el disco.
+### 🌍 Un solo juego, seis idiomas
+- **Inglés, castellano, francés, alemán, italiano y japonés**, elegidos desde el menú de opciones del Remaster. El juego
+  se reinicia solo en el idioma elegido.
+- Cada idioma usa el **texto oficial de su propia edición de PlayStation**: los diálogos con la tipografía de cada
+  idioma, las fichas de objetos y armas, los mensajes de la tarjeta de memoria y las etiquetas de los menús. Las pocas
+  etiquetas que las localizaciones originales dejaron en inglés también se han traducido.
+- **Japonés**: todos los diálogos del juego, con la tipografía japonesa original, sobre el motor de la edición
+  americana. Está en marcha una versión sobre el ejecutable japonés, con sus menús nativos.
+- No se modifica nada de los discos: cada idioma es un pequeño paquete generado desde la edición de esa región y
+  aplicado en memoria mientras el juego funciona.
 - Los mensajes en pantalla (guardado, velocidad, modo ventana) salen en una ventana con el estilo del propio juego.
 
 ### 🎨 Remasterización HD
@@ -159,7 +166,9 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 | ✅ | Juego a **60 FPS** por interpolación de polígonos (experimental) |
 | ✅ | Recorte de polígonos preciso (PGXP) |
 | ✅ | Antialiasing FXAA |
-| ✅ | Localización completa al castellano (menús y fichas de objetos) |
+| ✅ | **Seis idiomas**: inglés, castellano, francés, alemán, italiano y diálogos en japonés |
+| 🚧 | Versión japonesa con menús nativos (ejecutable japonés) |
+| 🔜 | Instalador que construye el juego desde tus propios discos, para no distribuir nunca datos del juego |
 | ✅ | **Menú de opciones del Remaster** con modos Original y HD |
 | ✅ | **Potenciadores**: velocidad x4, HP y MP infinitas, BP y EXP al máximo |
 | ✅ | **Menú de estados guardados** con miniaturas |
@@ -184,6 +193,20 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 ---
 
 ## Novedades
+
+**16-09-2026 — Seis idiomas en un solo juego**
+- El proyecto pasa a tener como base la **edición americana**, y sobre ella se importan los demás idiomas:
+  **castellano, francés, alemán, italiano** y **japonés**, elegidos desde el menú de opciones del Remaster.
+- Cada idioma trae el **texto oficial de su propia edición de PlayStation**: los diálogos, con la tipografía de cada
+  idioma, las fichas de objetos y armas, los mensajes de la tarjeta de memoria y las etiquetas de los menús. Donde las
+  localizaciones originales dejaron etiquetas en inglés, también se han traducido. Unas pocas salas cuya lógica de
+  diálogos cambia entre regiones usan la lógica americana con el texto localizado, así que no queda nada sin traducir.
+- Los **diálogos japoneses** no cabían en el disco americano (la tipografía de kanji ocupa dos o tres veces más), así
+  que las imágenes de letras se entregan directamente a la memoria de vídeo mientras el juego carga cada sala. Los menús
+  y fichas japoneses usan otro motor de texto; ha empezado una versión dedicada sobre el ejecutable japonés.
+- Por dentro: el motor de traducción recorre cada módulo cargado una sola vez en vez de una por texto, lo que elimina
+  los tirones en las pantallas de carga; y cargar una partida con un idioma traducido, que se quedaba en "Now loading",
+  está arreglado.
 
 **15-09-2026 — Menú de opciones del Remaster, potenciadores, estados guardados y un solo disco**
 - **Menú de opciones del Remaster** dentro del juego, desde Opciones en el menú principal y con el estilo del propio

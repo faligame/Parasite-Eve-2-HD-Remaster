@@ -122,9 +122,16 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
   save from the title screen, the disc is swapped instantly and the disc change screen never appears.
 - **Exit** in the pause menu closes the game.
 
-### 🇪🇸 Complete Spanish localization
-- The disc already had Spanish dialogue; the **menu labels** (Item, Status, Key Item, Equip...) and the **weapon,
-  ammo and armor sheets** that were still in English are now translated, without modifying the disc.
+### 🌍 One game, six languages
+- **English, Spanish, French, German, Italian and Japanese**, selected from the Remaster options menu. The game
+  restarts by itself in the chosen language.
+- Every language uses the **official text of its own PlayStation release**: dialogues with each language's own
+  lettering, item and weapon sheets, memory card messages and menu labels. The few labels the original localizations
+  left in English were translated as well.
+- **Japanese**: every in-game dialogue, with the original Japanese lettering, running on the US game engine. A build
+  on the Japanese executable, with native Japanese menus, is in progress.
+- Nothing on the discs is modified: each language is a small pack generated from that region's release and applied in
+  memory while the game runs.
 - On-screen messages (saves, speed, window mode) are shown in a window with the game's own style.
 
 ### 🎨 HD Remaster
@@ -157,7 +164,9 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 | ✅ | **60 FPS** gameplay by polygon interpolation (experimental) |
 | ✅ | Precise polygon culling (PGXP) |
 | ✅ | FXAA antialiasing |
-| ✅ | Complete Spanish localization (menus and item sheets) |
+| ✅ | **Six languages**: English, Spanish, French, German, Italian and Japanese dialogues |
+| 🚧 | Japanese build with native menus (Japanese executable) |
+| 🔜 | Installer that builds the game from your own discs, so no game data is ever distributed |
 | ✅ | **Remaster options menu** with Original and HD modes |
 | ✅ | **Game boosters**: speed x4, infinite HP and MP, max BP and EXP |
 | ✅ | **Save states menu** with thumbnails |
@@ -182,6 +191,20 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 ---
 
 ## News
+
+**2026-09-16 — Six languages in one game**
+- The project moved to the **US release as its base**, and every other language is imported on top of it: **Spanish,
+  French, German, Italian** and **Japanese**, chosen from the Remaster options menu.
+- Each language brings the **official text of its own PlayStation release**: the dialogues, with each language's own
+  lettering, the item and weapon sheets, the memory card messages and the menu labels. Where the original localizations
+  kept some labels in English, they were translated too. A handful of rooms whose dialogue logic differs between
+  regions use the US logic with the localized text, so nothing is left untranslated.
+- **Japanese dialogues** did not fit on the US disc (kanji lettering is two to three times larger), so the letter
+  images are delivered straight into video memory as the game loads each room. Japanese menus and item sheets use a
+  different text engine; a dedicated build on the Japanese executable has started.
+- Under the hood: the translation engine now scans each loaded module once instead of once per text, which removes the
+  stutter on loading screens; and loading a save game with a translated language, which used to freeze on "Now
+  loading", is fixed.
 
 **2026-09-15 — Remaster options menu, game boosters, save states and a single disc**
 - **Remaster options menu** inside the game, opened from Options in the main menu and drawn with the game's own style:
