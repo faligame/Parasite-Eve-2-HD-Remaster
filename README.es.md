@@ -72,8 +72,8 @@ Los dos menús se dibujan con los paneles, marcos, letras y cursor del propio ju
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="media/screenshots/09_extra_options.png" alt="Menú de opciones del Remaster"><br><b>Opciones del Remaster</b><br>Se abre desde <b>Opciones</b> en el menú principal</td>
-    <td align="center" width="50%"><img src="media/screenshots/10_saveload_states_menu.png" alt="Menú de estados guardados"><br><b>Estados guardados</b><br><b>SELECT + R1</b> en el mando</td>
+    <td align="center" width="50%"><img src="media/screenshots/10_extra_options.png" alt="Menú de opciones del Remaster"><br><b>Opciones del Remaster</b><br>Se abre desde <b>Opciones</b> en el menú principal</td>
+    <td align="center" width="50%"><img src="media/screenshots/11_saveload_states_menu.png" alt="Menú de estados guardados"><br><b>Estados guardados</b><br><b>SELECT + R1</b> en el mando</td>
   </tr>
 </table>
 
@@ -135,6 +135,9 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 - **Capas de primer plano en HD** generadas a partir de los fondos HD, para que los objetos delante de los personajes
   coincidan con el nuevo arte.
 - **Texturas remasterizadas** de personajes, enemigos, armas, HUD y menús.
+- **Cinemáticas en alta resolución**: cada fotograma de los FMV se reconoce mientras el juego lo decodifica y se
+  sustituye por su versión en alta resolución (por ejemplo, reescalada con IA), así que los vídeos conservan el audio y
+  el ritmo del propio juego y nunca se desincronizan. Los vídeos originales siguen disponibles desde el menú de opciones.
 - **Compatible con packs de texturas de DuckStation**: los reemplazos `texpage-*` y `vram-write-*` funcionan tal cual.
 - **Pensado para quien hace texturas**: los reemplazos se llaman como los ficheros del propio juego (fondos
   `bs_N.png`, imágenes `pe2img_N.png`), el pack **se recarga con el juego abierto** (guardas un PNG y lo ves al
@@ -166,7 +169,8 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 | 🚧 | Completar el pack de fondos HD |
 | 🚧 | Personajes, enemigos y armas remasterizados |
 | 🚧 | HUD, menús e iconos de objetos remasterizados |
-| 🚧 | **FMV mejorados** en alta resolución |
+| ✅ | Motor de **cinemáticas en alta resolución** (FMV sustituidos fotograma a fotograma, siempre sincronizados) |
+| 🚧 | Reescalado de todos los FMV a alta resolución |
 | 🔜 | **Pantalla panorámica nativa (16:9)** |
 | 🔜 | Lanzamiento público |
 
@@ -191,6 +195,8 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 - **Menú de estados guardados** rediseñado con el aspecto del juego: 12 ranuras con miniatura y fecha.
 - **Un solo disco**: el runtime cambia de disco por su cuenta antes de que el juego lo pida, así que la pantalla de
   cambio de disco desaparece, también al continuar una partida del disco 2 o al cargar un estado guardado.
+- **Cinemáticas en alta resolución**: los FMV se sustituyen fotograma a fotograma por su versión en alta resolución
+  mientras el juego sigue reproduciendo su propio audio, así que van perfectamente sincronizados.
 - **HD en todas partes**: antialiasing FXAA, el destello en blanco y negro al empezar el combate y las sacudidas de
   pantalla de los jefes conservan la resolución completa, y las cinemáticas siguen sincronizadas con las cargas rápidas
   de puertas y cámaras.

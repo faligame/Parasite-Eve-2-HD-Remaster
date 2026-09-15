@@ -72,8 +72,8 @@ Both menus are drawn with the game's own panels, frames, font and cursor, so the
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="media/screenshots/09_extra_options.png" alt="Remaster options menu"><br><b>Remaster options</b><br>Opens from <b>Options</b> in the main menu</td>
-    <td align="center" width="50%"><img src="media/screenshots/10_saveload_states_menu.png" alt="Save states menu"><br><b>Save states</b><br><b>SELECT + R1</b> on the controller</td>
+    <td align="center" width="50%"><img src="media/screenshots/10_extra_options.png" alt="Remaster options menu"><br><b>Remaster options</b><br>Opens from <b>Options</b> in the main menu</td>
+    <td align="center" width="50%"><img src="media/screenshots/11_saveload_states_menu.png" alt="Save states menu"><br><b>Save states</b><br><b>SELECT + R1</b> on the controller</td>
   </tr>
 </table>
 
@@ -133,6 +133,9 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
   screen at 320×240 in all of them; the remaster keeps the full resolution.
 - **HD foreground layers** generated from the HD backgrounds, so objects in front of the characters match the new art.
 - **Remastered textures** for characters, enemies, weapons, HUD and menus.
+- **High resolution cinematics**: every FMV frame is recognized as the game decodes it and replaced by its high
+  resolution version (for example, upscaled with AI), so the videos keep the game's own audio and timing and can never
+  go out of sync. The original videos are still available from the options menu.
 - **Compatible with DuckStation texture packs**: existing `texpage-*` and `vram-write-*` replacements work as-is.
 - **Made for texture artists**: replacements are named after the game's own files (`bs_N.png` backgrounds,
   `pe2img_N.png` images), the pack **reloads while the game is running** (save a PNG and see it in-game instantly),
@@ -164,7 +167,8 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 | 🚧 | Completing the HD background pack |
 | 🚧 | Remastered characters, enemies and weapons |
 | 🚧 | Remastered HUD, menus and item icons |
-| 🚧 | **Enhanced FMVs** in high resolution |
+| ✅ | **High resolution cinematics** engine (FMVs replaced frame by frame, always in sync) |
+| 🚧 | Upscaling every FMV to high resolution |
 | 🔜 | **Native widescreen (16:9)** |
 | 🔜 | Public release |
 
@@ -188,6 +192,8 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 - **Save states menu** redesigned with the game's look: 12 slots with a thumbnail and date.
 - **Single-disc experience**: the runtime swaps discs by itself before the game asks for it, so the disc change screen
   is gone, also when continuing a disc 2 save or loading a save state.
+- **High resolution cinematics**: FMVs are replaced frame by frame by their high resolution versions while the game
+  keeps playing its own audio, so they stay perfectly in sync.
 - **HD everywhere**: FXAA antialiasing, the black and white battle start flash and boss screen shakes now keep the full
   resolution, and in-game cutscenes stay in sync with faster door and camera loads.
 
