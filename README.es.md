@@ -160,6 +160,9 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 - **Capas de primer plano en HD** generadas a partir de los fondos HD, para que los objetos delante de los personajes
   coincidan con el nuevo arte.
 - **Texturas remasterizadas** de personajes, enemigos, armas, HUD y menús.
+- **Letras de los diálogos en HD**: cada letra de los cuadros de diálogo y de los carteles con el nombre de quien
+  habla se redibuja en alta resolución con la tipografía CMU Sans Serif, por idioma, y conserva los colores del
+  propio juego (blanco, verde de selección, texto rojo y azul).
 - **Cinemáticas en alta resolución**: cada fotograma de los FMV se reconoce mientras el juego lo decodifica y se
   sustituye por su versión en alta resolución (por ejemplo, reescalada con IA), así que los vídeos conservan el audio y
   el ritmo del propio juego y nunca se desincronizan. Los vídeos originales siguen disponibles desde el menú de opciones.
@@ -181,6 +184,8 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 | ✅ | Cuadros de texto, pantallas congeladas, sacudidas y destello de combate en HD |
 | ✅ | Motor de reemplazo de texturas HD (por imagen del juego, por paleta, compatible con DuckStation) |
 | ✅ | Capas de primer plano HD automáticas |
+| ✅ | **Letras de los diálogos en HD** en inglés |
+| 🚧 | Letras HD en castellano, francés, alemán e italiano (en pruebas) y después en japonés |
 | ✅ | Juego a **60 FPS** por interpolación de polígonos (experimental) |
 | ✅ | Recorte de polígonos preciso (PGXP) |
 | ✅ | Antialiasing FXAA |
@@ -212,6 +217,17 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 ---
 
 ## Novedades
+
+**16-09-2026 — Letras de los diálogos en HD**
+- Las letras de los cuadros de diálogo y los carteles con el nombre de quien habla se dibujan ahora en **alta
+  resolución**. Cada sala trae su propio atlas de letras; el Remaster reconoce cada letra mientras el juego la
+  dibuja y la sustituye por una versión nítida trazada con la tipografía **CMU Sans Serif**, ajustada al tamaño y
+  la posición exactos de la original para que el texto no se descoloque. Las paletas del juego se aplican en
+  directo, así que el texto blanco, verde, rojo y azul y los carteles de nombre mantienen sus colores.
+- Cada idioma tiene su propio juego de letras, con sus acentos y signos (¡ ¿ ñ é ß ä ö ü « » …), y solo se usa
+  el del idioma con el que juegas.
+- El inglés está terminado; castellano, francés, alemán e italiano están generados y en pruebas. Después, el
+  japonés.
 
 **16-09-2026 — Controles modernos, motor japonés y nuevo menú del Remaster**
 - **Controles modernos**: el stick izquierdo mueve a Aya respecto a la cámara, como en el remake de *Resident
@@ -304,6 +320,8 @@ Este proyecto se apoya en estos proyectos y personas increíbles:
 | FXAA | Timothy Lottes (NVIDIA) | Técnica original de antialiasing aproximado rápido | — |
 | [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth y colaboradores | Documentación del hardware y de los contenedores de archivos | — |
 | [Teko](https://github.com/googlefonts/teko), [Rajdhani](https://github.com/itfoundry/rajdhani), [Barlow](https://github.com/jpt/barlow), [Noto Sans JP](https://github.com/notofonts/noto-cjk) | Indian Type Foundry, Jeremy Tribby, Google y Adobe | Tipografía de los menús del Remaster | SIL OFL 1.1 |
+| [CMU Sans Serif](https://cm-unicode.sourceforge.io/) | Donald Knuth (Computer Modern), Andrey V. Panov (CM-Unicode) | Letras HD de los diálogos | SIL OFL 1.1 |
+| Herramienta de sustitución de fuentes | u/Over_Transition_8907 | Idea original de las letras HD y referencia de glifos para identificar las letras del juego | — |
 
 Librerías: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
 [stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) y [zlib](https://zlib.net).

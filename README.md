@@ -158,6 +158,9 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
   screen at 320×240 in all of them; the remaster keeps the full resolution.
 - **HD foreground layers** generated from the HD backgrounds, so objects in front of the characters match the new art.
 - **Remastered textures** for characters, enemies, weapons, HUD and menus.
+- **HD dialogue lettering**: every letter of the dialogue boxes and the speaker name tags is redrawn in high
+  resolution from the CMU Sans Serif typeface, per language, and keeps the game's own colours (white, green
+  selection, red and blue text).
 - **High resolution cinematics**: every FMV frame is recognized as the game decodes it and replaced by its high
   resolution version (for example, upscaled with AI), so the videos keep the game's own audio and timing and can never
   go out of sync. The original videos are still available from the options menu.
@@ -179,6 +182,8 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 | ✅ | HD text boxes, freeze-frames, screen shakes and battle flash |
 | ✅ | HD texture replacement engine (per game image, per palette, DuckStation compatible) |
 | ✅ | Automatic HD foreground layers |
+| ✅ | **HD dialogue lettering** in English |
+| 🚧 | HD dialogue lettering in Spanish, French, German and Italian (in testing), then Japanese |
 | ✅ | **60 FPS** gameplay by polygon interpolation (experimental) |
 | ✅ | Precise polygon culling (PGXP) |
 | ✅ | FXAA antialiasing |
@@ -210,6 +215,16 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 ---
 
 ## News
+
+**2026-09-16 — HD dialogue lettering**
+- The letters of the dialogue boxes and the speaker name tags are now drawn in **high resolution**. Each room
+  ships its own small letter atlas; the remaster recognizes every letter as the game draws it and replaces it
+  with a sharp version drawn from the **CMU Sans Serif** typeface, fitted to the exact size and position of the
+  original so the text keeps its layout. The game's own palettes are applied live, so white, green, red and blue
+  text and the name tags all keep their colours.
+- Each language has its own set, with its accents and punctuation (¡ ¿ ñ é ß ä ö ü « » …), and only the set
+  of the language you are playing is used.
+- English is finished; Spanish, French, German and Italian are generated and in testing. Japanese comes next.
 
 **2026-09-16 — Modern controls, Japanese engine and a new Remaster menu**
 - **Modern controls**: the left stick moves Aya relative to the camera, as in the *Resident Evil* remake, with
@@ -298,6 +313,8 @@ This project stands on the shoulders of these amazing projects and people:
 | FXAA | Timothy Lottes (NVIDIA) | Original fast approximate antialiasing technique | — |
 | [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth and contributors | Hardware and file archive documentation | — |
 | [Teko](https://github.com/googlefonts/teko), [Rajdhani](https://github.com/itfoundry/rajdhani), [Barlow](https://github.com/jpt/barlow), [Noto Sans JP](https://github.com/notofonts/noto-cjk) | Indian Type Foundry, Jeremy Tribby, Google and Adobe | Lettering of the Remaster menus | SIL OFL 1.1 |
+| [CMU Sans Serif](https://cm-unicode.sourceforge.io/) | Donald Knuth (Computer Modern), Andrey V. Panov (CM-Unicode) | HD dialogue lettering | SIL OFL 1.1 |
+| Font replacement tool | u/Over_Transition_8907 | Original HD letter idea and glyph reference used to identify the game's letters | — |
 
 Libraries: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
 [stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) and [zlib](https://zlib.net).
