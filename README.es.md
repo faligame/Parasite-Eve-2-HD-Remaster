@@ -100,6 +100,18 @@ Los dos menús se dibujan con los paneles, marcos, letras y cursor del propio ju
 - **Cargas rápidas** en modo HD: puertas y cambios de cámara cargan en una fracción del tiempo, con la música y las
   cinemáticas sincronizadas.
 - Si un cambio necesita reiniciar, el juego **lo guarda y se reinicia solo**.
+- **Dibujado en seis idiomas**: el menú se traduce al vuelo mientras eliges el idioma. Su tipografía se genera a
+  partir de las fuentes Teko, Rajdhani, Barlow y Noto Sans JP, con los botones de PlayStation a color, y cada
+  acción tiene su propio sonido.
+
+### 🎮 Controles modernos
+- **Stick izquierdo: controles modernos.** Aya anda hacia donde empujas, respecto a la cámara, como en el remake
+  de *Resident Evil*. Los giros son instantáneos, con el stick a tope corre y, cuando la cámara cambia de plano, se
+  mantiene la dirección hasta que muevas el stick, así que nunca se da la vuelta en un cambio de escena.
+- **Cruceta: controles clásicos de tanque**, intactos. Los dos funcionan a la vez, sin nada que configurar.
+- **También en combate**: con el arma lista, el stick mueve a Aya al instante; al soltarlo, el autoapuntado del
+  propio juego la vuelve a girar hacia el objetivo fijado, lista para disparar. Empezar a andar, correr o bajar el
+  arma ya no espera a los fundidos largos de animación.
 
 ### ⚡ Potenciadores
 Inspirados en los potenciadores de comodidad que Square Enix añadió a las reediciones modernas de clásicos como
@@ -128,8 +140,9 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 - Cada idioma usa el **texto oficial de su propia edición de PlayStation**: los diálogos con la tipografía de cada
   idioma, las fichas de objetos y armas, los mensajes de la tarjeta de memoria y las etiquetas de los menús. Las pocas
   etiquetas que las localizaciones originales dejaron en inglés también se han traducido.
-- **Japonés**: todos los diálogos del juego, con la tipografía japonesa original, sobre el motor de la edición
-  americana. Está en marcha una versión sobre el ejecutable japonés, con sus menús nativos.
+- **Japonés: un segundo motor construido sobre la edición japonesa**, con sus menús, fichas y diálogos nativos.
+  Al elegir japonés se cambia de motor solo; los dos motores viven en la misma carpeta y comparten la tarjeta de
+  memoria, el pack HD y todas las mejoras.
 - No se modifica nada de los discos: cada idioma es un pequeño paquete generado desde la edición de esa región y
   aplicado en memoria mientras el juego funciona.
 - Los mensajes en pantalla (guardado, velocidad, modo ventana) salen en una ventana con el estilo del propio juego.
@@ -167,7 +180,9 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 | ✅ | Recorte de polígonos preciso (PGXP) |
 | ✅ | Antialiasing FXAA |
 | ✅ | **Seis idiomas**: inglés, castellano, francés, alemán, italiano y diálogos en japonés |
-| 🚧 | Versión japonesa con menús nativos (ejecutable japonés) |
+| ✅ | **Motor japonés** con menús nativos (segundo ejecutable, misma carpeta) |
+| ✅ | **Controles modernos** en el stick (respecto a la cámara) junto a los clásicos en la cruceta |
+| ✅ | Menú del Remaster en seis idiomas con tipografía y sonidos nuevos |
 | 🔜 | Instalador que construye el juego desde tus propios discos, para no distribuir nunca datos del juego |
 | ✅ | **Menú de opciones del Remaster** con modos Original y HD |
 | ✅ | **Potenciadores**: velocidad x4, HP y MP infinitas, BP y EXP al máximo |
@@ -193,6 +208,21 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 ---
 
 ## Novedades
+
+**16-09-2026 — Controles modernos, motor japonés y nuevo menú del Remaster**
+- **Controles modernos**: el stick izquierdo mueve a Aya respecto a la cámara, como en el remake de *Resident
+  Evil*, con giros instantáneos y carrera con el stick a tope; en un cambio de plano se mantiene la dirección hasta
+  que muevas el stick. La cruceta conserva los controles clásicos de tanque y los dos funcionan a la vez. También
+  en combate: el stick mueve a Aya con el arma lista y, al soltarlo, el autoapuntado del juego la devuelve al
+  objetivo. Los fundidos de animación al empezar a andar, correr o bajar el arma se han acortado para que responda
+  al momento.
+- **Motor japonés**: la edición japonesa funciona ya como un segundo motor con sus menús, fichas y diálogos nativos
+  y todas las mejoras del proyecto (pack HD, cinemáticas, 60 FPS, disco único, potenciadores). Al elegir japonés en
+  el menú de opciones se cambia de motor automáticamente; los dos comparten carpeta y tarjeta de memoria.
+- **Menú del Remaster rehecho**: el idioma en primer lugar y traducido al vuelo mientras lo eliges, tipografía nueva
+  generada desde las fuentes Teko, Rajdhani, Barlow y Noto Sans JP, botones de PlayStation, marcos limpios y sonidos
+  al abrir, moverse, elegir y guardar. El menú de estados guardados y los mensajes en pantalla siguen el idioma
+  elegido.
 
 **16-09-2026 — Seis idiomas en un solo juego**
 - El proyecto pasa a tener como base la **edición americana**, y sobre ella se importan los demás idiomas:
@@ -279,6 +309,7 @@ Este proyecto se apoya en estos proyectos y personas increíbles:
 | PGXP | iCatButler | Técnica original de precisión de geometría | — |
 | FXAA | Timothy Lottes (NVIDIA) | Técnica original de antialiasing aproximado rápido | — |
 | [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth y colaboradores | Documentación del hardware y de los contenedores de archivos | — |
+| [Teko](https://github.com/googlefonts/teko), [Rajdhani](https://github.com/itfoundry/rajdhani), [Barlow](https://github.com/jpt/barlow), [Noto Sans JP](https://github.com/notofonts/noto-cjk) | Indian Type Foundry, Jeremy Tribby, Google y Adobe | Tipografía de los menús del Remaster | SIL OFL 1.1 |
 
 Librerías: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
 [stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) y [zlib](https://zlib.net).

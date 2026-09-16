@@ -100,6 +100,18 @@ Both menus are drawn with the game's own panels, frames, font and cursor, so the
 - **Faster loads** in HD mode: doors and camera changes load in a fraction of the time, with music and cutscenes still
   in sync.
 - When a change needs a restart, the game **saves it and restarts by itself**.
+- **Drawn in six languages**: the menu translates itself on the fly while you pick the language. Its lettering is
+  generated from the Teko, Rajdhani, Barlow and Noto Sans JP typefaces, with the PlayStation button glyphs in color,
+  and every action has its own sound.
+
+### 🎮 Modern controls
+- **Left stick: modern controls.** Aya walks in the direction you push, relative to the camera, as in the
+  *Resident Evil* remake. Turns are instant, pushing the stick all the way makes her run, and when the camera cuts
+  the direction is kept until you move the stick, so she never spins round on a scene change.
+- **D-pad: classic tank controls**, untouched. Both work at the same time, with no setting to choose.
+- **Also in combat**: with the weapon ready, the stick moves Aya instantly; release it and the game's own auto-aim
+  turns her back to the locked target, ready to shoot. Starting to walk, run or lower the weapon no longer waits
+  for the long animation blends.
 
 ### ⚡ Game boosters
 Inspired by the quality-of-life boosters Square Enix added to its modern re-releases of classics like
@@ -128,8 +140,9 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 - Every language uses the **official text of its own PlayStation release**: dialogues with each language's own
   lettering, item and weapon sheets, memory card messages and menu labels. The few labels the original localizations
   left in English were translated as well.
-- **Japanese**: every in-game dialogue, with the original Japanese lettering, running on the US game engine. A build
-  on the Japanese executable, with native Japanese menus, is in progress.
+- **Japanese: a second engine built on the Japanese release**, with its native menus, item sheets and dialogues.
+  Choosing Japanese switches engine by itself; both engines live in the same folder and share the save card, the
+  HD pack and every enhancement.
 - Nothing on the discs is modified: each language is a small pack generated from that region's release and applied in
   memory while the game runs.
 - On-screen messages (saves, speed, window mode) are shown in a window with the game's own style.
@@ -165,7 +178,9 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 | ✅ | Precise polygon culling (PGXP) |
 | ✅ | FXAA antialiasing |
 | ✅ | **Six languages**: English, Spanish, French, German, Italian and Japanese dialogues |
-| 🚧 | Japanese build with native menus (Japanese executable) |
+| ✅ | **Japanese engine** with native menus (second executable, same folder) |
+| ✅ | **Modern controls** on the stick (camera relative) alongside classic controls on the D-pad |
+| ✅ | Remaster menu in six languages with new lettering and sounds |
 | 🔜 | Installer that builds the game from your own discs, so no game data is ever distributed |
 | ✅ | **Remaster options menu** with Original and HD modes |
 | ✅ | **Game boosters**: speed x4, infinite HP and MP, max BP and EXP |
@@ -191,6 +206,19 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 ---
 
 ## News
+
+**2026-09-16 — Modern controls, Japanese engine and a new Remaster menu**
+- **Modern controls**: the left stick moves Aya relative to the camera, as in the *Resident Evil* remake, with
+  instant turns and running when pushed all the way; on a camera cut the direction is kept until you move the
+  stick. The D-pad keeps the classic tank controls, and both work at once. It also works in combat: the stick moves
+  Aya with the weapon ready and, when released, the game's auto-aim brings her back onto the target. The animation
+  blends when starting to walk, run or lower the weapon were shortened so she responds right away.
+- **Japanese engine**: the Japanese release now runs as a second engine with its native menus, item sheets and
+  dialogues, and every enhancement of the project (HD pack, cinematics, 60 FPS, single disc, boosters). Choosing
+  Japanese in the options menu switches engine automatically; both share one folder and one save card.
+- **Remaster menu redone**: language first, translated on the fly while you pick it, new lettering generated from
+  the Teko, Rajdhani, Barlow and Noto Sans JP typefaces, PlayStation button glyphs, plain frames, and sounds for
+  opening, moving, choosing and saving. The save states menu and the on-screen messages follow the chosen language.
 
 **2026-09-16 — Six languages in one game**
 - The project moved to the **US release as its base**, and every other language is imported on top of it: **Spanish,
@@ -275,6 +303,7 @@ This project stands on the shoulders of these amazing projects and people:
 | PGXP | iCatButler | Original geometry precision technique | — |
 | FXAA | Timothy Lottes (NVIDIA) | Original fast approximate antialiasing technique | — |
 | [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth and contributors | Hardware and file archive documentation | — |
+| [Teko](https://github.com/googlefonts/teko), [Rajdhani](https://github.com/itfoundry/rajdhani), [Barlow](https://github.com/jpt/barlow), [Noto Sans JP](https://github.com/notofonts/noto-cjk) | Indian Type Foundry, Jeremy Tribby, Google and Adobe | Lettering of the Remaster menus | SIL OFL 1.1 |
 
 Libraries: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
 [stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) and [zlib](https://zlib.net).
