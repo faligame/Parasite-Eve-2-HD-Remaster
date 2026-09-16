@@ -16,6 +16,11 @@
   <a href="README.md">🇬🇧 Read in English</a>
 </p>
 
+<p align="center">
+  <a href="https://streamable.com/nypzbk"><img src="media/video_thumbnail.jpg" alt="Ver el vídeo de gameplay" width="640"></a><br>
+  <a href="https://streamable.com/nypzbk"><b>▶ Ver el vídeo de gameplay (8 min)</b></a>
+</p>
+
 ---
 
 ## Sobre el proyecto
