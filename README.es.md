@@ -195,7 +195,6 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 | 🚧 | HUD, menús e iconos de objetos remasterizados |
 | ✅ | Motor de **cinemáticas en alta resolución** (FMV sustituidos fotograma a fotograma, siempre sincronizados) |
 | 🚧 | Reescalado de todos los FMV a alta resolución |
-| 🔜 | **Pantalla panorámica nativa (16:9)** |
 | 🔜 | Lanzamiento público |
 
 ### Progreso del pack HD
@@ -269,16 +268,6 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 
 ---
 
-## Próximamente: pantalla panorámica
-
-<p align="center">
-  <img src="media/widescreen_preview.png" alt="Vista previa panorámica" width="100%">
-</p>
-
-El objetivo es un **modo 16:9 nativo** que muestre más de cada escena en lugar de estirar la imagen 4:3.
-Los fondos prerrenderizados se ampliarán para rellenar la vista más ancha.
-
----
 
 ## Preguntas frecuentes
 

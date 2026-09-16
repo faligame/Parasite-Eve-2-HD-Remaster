@@ -193,7 +193,6 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 | 🚧 | Remastered HUD, menus and item icons |
 | ✅ | **High resolution cinematics** engine (FMVs replaced frame by frame, always in sync) |
 | 🚧 | Upscaling every FMV to high resolution |
-| 🔜 | **Native widescreen (16:9)** |
 | 🔜 | Public release |
 
 ### HD pack progress
@@ -263,16 +262,6 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 
 ---
 
-## Coming next: widescreen
-
-<p align="center">
-  <img src="media/widescreen_preview.png" alt="Widescreen preview" width="100%">
-</p>
-
-The goal is a **native 16:9 mode** that renders more of each scene instead of stretching the 4:3 image.
-Pre-rendered backgrounds will be extended to fill the wider view.
-
----
 
 ## FAQ
 
