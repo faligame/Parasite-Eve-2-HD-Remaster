@@ -82,6 +82,27 @@ Both menus are drawn with the game's own panels, frames, font and cursor, so the
   </tr>
 </table>
 
+## Widescreen
+
+Optional 16:9 mode: the scene fills the whole screen while the HUD, text boxes and menus stay exactly where they were.
+
+<table>
+  <tr>
+    <td><img src="media/screenshots/12_widescreen1.png" alt="Widescreen: MIST armory"></td>
+    <td><img src="media/screenshots/13_widescreen2.png" alt="Widescreen"></td>
+    <td><img src="media/screenshots/14_widescreen3.png" alt="Widescreen: Dryfield"></td>
+  </tr>
+</table>
+
+## HD text
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="media/screenshots/15_hdtext_en.png" alt="HD dialogue lettering in English"><br><b>HD dialogue lettering</b></td>
+    <td align="center" width="50%"><img src="media/screenshots/16_hdtext_jap.png" alt="HD Japanese menus"><br><b>Japanese menus and item names in HD</b></td>
+  </tr>
+</table>
+
 ---
 
 ## Features
@@ -95,6 +116,11 @@ Both menus are drawn with the game's own panels, frames, font and cursor, so the
   intermediate frame with every 3D polygon halfway between two game frames. Characters and enemies move at 60 FPS
   with no added input lag; text, HUD, videos and camera cuts are untouched.
 - **FXAA antialiasing** on the game image, leaving text, menus and videos crisp.
+- **Widescreen 16:9** (optional): the 4:3 scene is enlarged to fill the screen, trimming a little at the top and
+  bottom, and every camera has its own framing so heads and feet stay in view. The HUD, text boxes, the pause menu and
+  item examination keep their original 4:3 place and size, and 60 FPS keeps working. The 4:3 mode is untouched.
+- **A single launcher**: just open `pe2.exe`. The language you chose decides which engine runs, so the options menu
+  always matches the game you are playing.
 
 ### ⚙️ Remaster options menu
 - Opens from **Options** in the main menu, before you start playing.
@@ -103,7 +129,8 @@ Both menus are drawn with the game's own panels, frames, font and cursor, so the
 - Internal resolution (**Original, HD, Full HD, 4K**), HD textures, HD videos, FXAA, scanlines, 60 FPS, fullscreen and
   window size.
 - **Faster loads** in HD mode: doors and camera changes load in a fraction of the time, with music and cutscenes still
-  in sync.
+  in sync, and the **"Now Loading" screens take about 3 seconds instead of 8**.
+- **Widescreen** on or off.
 - When a change needs a restart, the game **saves it and restarts by itself**.
 - **Drawn in six languages**: the menu translates itself on the fly while you pick the language. Its lettering is
   generated from the Teko, Rajdhani, Barlow and Noto Sans JP typefaces, with the PlayStation button glyphs in color,
@@ -144,10 +171,12 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
   restarts by itself in the chosen language.
 - Every language uses the **official text of its own PlayStation release**: dialogues with each language's own
   lettering, item and weapon sheets, memory card messages and menu labels. The few labels the original localizations
-  left in English were translated as well.
+  left in English were translated as well, including the weapon sheet tags (RATE, RANGE…) and the Parasite Energy
+  names, with short labels where the original box has little room.
 - **Japanese: a second engine built on the Japanese release**, with its native menus, item sheets and dialogues.
-  Choosing Japanese switches engine by itself; both engines live in the same folder and share the save card, the
-  HD pack and every enhancement.
+  Choosing Japanese switches engine by itself; both engines share the save card, the HD pack and every enhancement.
+- **HD textures per language**: any image of the pack can have a version for each language, so the title screen is
+  shown translated, and every region shows the same publisher screen before the intro.
 - Nothing on the discs is modified: each language is a small pack generated from that region's release and applied in
   memory while the game runs.
 - On-screen messages (saves, speed, window mode) are shown in a window with the game's own style.
@@ -158,9 +187,12 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
   screen at 320×240 in all of them; the remaster keeps the full resolution.
 - **HD foreground layers** generated from the HD backgrounds, so objects in front of the characters match the new art.
 - **Remastered textures** for characters, enemies, weapons, HUD and menus.
-- **HD dialogue lettering**: every letter of the dialogue boxes and the speaker name tags is redrawn in high
-  resolution from the CMU Sans Serif typeface, per language, and keeps the game's own colours (white, green
-  selection, red and blue text).
+- **HD dialogue lettering in all six languages**: every letter of the dialogue boxes and the speaker name tags is
+  redrawn in high resolution, per language, and keeps the game's own colours (white, green selection, red and blue
+  text). Latin alphabets use the CMU Sans Serif typeface; Japanese uses Noto Sans JP, slanted like the original.
+- **Japanese text in HD**: each kanji was identified by reading every sentence in context and checked against the
+  shape of the original letter; the few that could not be confirmed keep a clean upscale, so no wrong character ever
+  reaches the screen. The Japanese menu, shop and item font is remastered too.
 - **High resolution cinematics**: every FMV frame is recognized as the game decodes it and replaced by its high
   resolution version (for example, upscaled with AI), so the videos keep the game's own audio and timing and can never
   go out of sync. The original videos are still available from the options menu.
@@ -182,8 +214,12 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 | ✅ | HD text boxes, freeze-frames, screen shakes and battle flash |
 | ✅ | HD texture replacement engine (per game image, per palette, DuckStation compatible) |
 | ✅ | Automatic HD foreground layers |
-| ✅ | **HD dialogue lettering** in English |
-| 🚧 | HD dialogue lettering in Spanish, French, German and Italian (in testing), then Japanese |
+| ✅ | **HD dialogue lettering** in English, Spanish, French, German, Italian and Japanese |
+| ✅ | Japanese menus, shop and item names in HD |
+| ✅ | **Widescreen 16:9** (optional), with the HUD and menus kept in 4:3 |
+| ✅ | Faster "Now Loading" screens (about 3 s instead of 8) |
+| ✅ | Single launcher that picks the engine from the chosen language |
+| ✅ | HD textures per language (translated title screen) |
 | ✅ | **60 FPS** gameplay by polygon interpolation (experimental) |
 | ✅ | Precise polygon culling (PGXP) |
 | ✅ | FXAA antialiasing |
@@ -215,6 +251,23 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 ---
 
 ## News
+
+**2026-09-17 — Widescreen, HD text in every language and a single launcher**
+- **Widescreen 16:9**, as an option in the Remaster menu. The 4:3 scene is enlarged to fill the screen and each
+  camera has its own framing, so characters keep their heads and feet in view. The HUD, text boxes, the pause menu,
+  item examination and effects stay in their original 4:3 place and size, and the 60 FPS mode keeps working. With the
+  option off, the game looks exactly as before.
+- **HD lettering finished** in Spanish, French, German and Italian, and now **Japanese**: every character used in
+  the dialogues was identified by reading each sentence in context and then checked against the shape of the
+  original letter. Letters that could not be confirmed keep a clean upscale instead of risking a wrong kanji. The
+  Japanese speaker tags and the menu, shop and item font are in HD as well.
+- **Faster "Now Loading"**: those screens now take about 3 seconds instead of 8.
+- **Translations completed**: weapon sheet tags (RATE, RANGE…), Parasite Energy names and a few menu labels that
+  were still in English, shortened where the original box is small. The help text of Exit now says it closes the game.
+- **One launcher**: only `pe2.exe` needs to be opened; the chosen language decides which engine runs, and the
+  Japanese engine now lives in its own `engine` folder.
+- **HD textures per language**: the pack can hold a version of any image for each language, used for the translated
+  title screen, and every region now shows the same publisher screen before the intro.
 
 **2026-09-16 — HD dialogue lettering**
 - The letters of the dialogue boxes and the speaker name tags are now drawn in **high resolution**. Each room
@@ -315,6 +368,7 @@ This project stands on the shoulders of these amazing projects and people:
 | [Teko](https://github.com/googlefonts/teko), [Rajdhani](https://github.com/itfoundry/rajdhani), [Barlow](https://github.com/jpt/barlow), [Noto Sans JP](https://github.com/notofonts/noto-cjk) | Indian Type Foundry, Jeremy Tribby, Google and Adobe | Lettering of the Remaster menus | SIL OFL 1.1 |
 | [CMU Sans Serif](https://cm-unicode.sourceforge.io/) | Donald Knuth (Computer Modern), Andrey V. Panov (CM-Unicode) | HD dialogue lettering | SIL OFL 1.1 |
 | Font replacement tool | u/Over_Transition_8907 | Original HD letter idea and glyph reference used to identify the game's letters | — |
+| [Game icon](https://www.steamgriddb.com/) | Ghoulrx (SteamGridDB) | Icon of the game executable | — |
 
 Libraries: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
 [stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) and [zlib](https://zlib.net).

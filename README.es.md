@@ -82,6 +82,27 @@ Los dos menús se dibujan con los paneles, marcos, letras y cursor del propio ju
   </tr>
 </table>
 
+## Panorámico
+
+Modo 16:9 opcional: la escena ocupa toda la pantalla y el HUD, los cuadros de texto y los menús se quedan exactamente donde estaban.
+
+<table>
+  <tr>
+    <td><img src="media/screenshots/12_widescreen1.png" alt="Panorámico: armería del MIST"></td>
+    <td><img src="media/screenshots/13_widescreen2.png" alt="Panorámico"></td>
+    <td><img src="media/screenshots/14_widescreen3.png" alt="Panorámico: Dryfield"></td>
+  </tr>
+</table>
+
+## Texto en HD
+
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="media/screenshots/15_hdtext_en.png" alt="Letras de los diálogos en HD"><br><b>Letras de los diálogos en HD</b></td>
+    <td align="center" width="50%"><img src="media/screenshots/16_hdtext_jap.png" alt="Menús japoneses en HD"><br><b>Menús y nombres de objetos en japonés en HD</b></td>
+  </tr>
+</table>
+
 ---
 
 ## Características
@@ -95,6 +116,12 @@ Los dos menús se dibujan con los paneles, marcos, letras y cursor del propio ju
   fotograma intermedio con cada polígono 3D a medio camino entre dos fotogramas del juego. Personajes y enemigos se
   mueven a 60 FPS sin retraso añadido; texto, HUD, vídeos y cambios de cámara quedan intactos.
 - **Antialiasing FXAA** sobre la imagen del juego, sin emborronar textos, menús ni vídeos.
+- **Panorámico 16:9** (opcional): la escena 4:3 se amplía hasta llenar la pantalla, recortando un poco arriba y
+  abajo, y cada cámara tiene su propio encuadre para que no se corten cabezas ni pies. El HUD, los cuadros de texto,
+  el menú de pausa y la pantalla de examinar objetos conservan su sitio y tamaño 4:3, y los 60 FPS siguen
+  funcionando. El modo 4:3 queda intacto.
+- **Un solo lanzador**: basta con abrir `pe2.exe`. El idioma elegido decide qué motor se ejecuta, así que el menú de
+  opciones siempre corresponde al juego que estás jugando.
 
 ### ⚙️ Menú de opciones del Remaster
 - Se abre desde **Opciones** en el menú principal, antes de empezar a jugar.
@@ -103,7 +130,8 @@ Los dos menús se dibujan con los paneles, marcos, letras y cursor del propio ju
 - Resolución interna (**Original, HD, Full HD, 4K**), texturas HD, vídeos HD, FXAA, scanlines, 60 FPS, pantalla
   completa y tamaño de ventana.
 - **Cargas rápidas** en modo HD: puertas y cambios de cámara cargan en una fracción del tiempo, con la música y las
-  cinemáticas sincronizadas.
+  cinemáticas sincronizadas, y las **pantallas "Now Loading" duran unos 3 segundos en vez de 8**.
+- **Panorámico** activado o desactivado.
 - Si un cambio necesita reiniciar, el juego **lo guarda y se reinicia solo**.
 - **Dibujado en seis idiomas**: el menú se traduce al vuelo mientras eliges el idioma. Su tipografía se genera a
   partir de las fuentes Teko, Rajdhani, Barlow y Noto Sans JP, con los botones de PlayStation a color, y cada
@@ -144,10 +172,13 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
   se reinicia solo en el idioma elegido.
 - Cada idioma usa el **texto oficial de su propia edición de PlayStation**: los diálogos con la tipografía de cada
   idioma, las fichas de objetos y armas, los mensajes de la tarjeta de memoria y las etiquetas de los menús. Las pocas
-  etiquetas que las localizaciones originales dejaron en inglés también se han traducido.
+  etiquetas que las localizaciones originales dejaron en inglés también se han traducido, incluidas las de las fichas
+  de armas (RATE, RANGE…) y los nombres de las Energías Parásitas, abreviadas donde el hueco original es pequeño.
 - **Japonés: un segundo motor construido sobre la edición japonesa**, con sus menús, fichas y diálogos nativos.
-  Al elegir japonés se cambia de motor solo; los dos motores viven en la misma carpeta y comparten la tarjeta de
-  memoria, el pack HD y todas las mejoras.
+  Al elegir japonés se cambia de motor solo; los dos motores comparten la tarjeta de memoria, el pack HD y todas las
+  mejoras.
+- **Texturas HD por idioma**: cualquier imagen del pack puede tener una versión para cada idioma, así que la pantalla
+  de título sale traducida y todas las regiones muestran la misma pantalla de editora antes de la intro.
 - No se modifica nada de los discos: cada idioma es un pequeño paquete generado desde la edición de esa región y
   aplicado en memoria mientras el juego funciona.
 - Los mensajes en pantalla (guardado, velocidad, modo ventana) salen en una ventana con el estilo del propio juego.
@@ -160,9 +191,13 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 - **Capas de primer plano en HD** generadas a partir de los fondos HD, para que los objetos delante de los personajes
   coincidan con el nuevo arte.
 - **Texturas remasterizadas** de personajes, enemigos, armas, HUD y menús.
-- **Letras de los diálogos en HD**: cada letra de los cuadros de diálogo y de los carteles con el nombre de quien
-  habla se redibuja en alta resolución con la tipografía CMU Sans Serif, por idioma, y conserva los colores del
-  propio juego (blanco, verde de selección, texto rojo y azul).
+- **Letras de los diálogos en HD en los seis idiomas**: cada letra de los cuadros de diálogo y de los carteles con el
+  nombre de quien habla se redibuja en alta resolución, por idioma, y conserva los colores del propio juego (blanco,
+  verde de selección, texto rojo y azul). Los alfabetos latinos usan la tipografía CMU Sans Serif; el japonés usa
+  Noto Sans JP, inclinada como la original.
+- **Texto japonés en HD**: cada kanji se identificó leyendo cada frase en su contexto y se comprobó con la forma de la
+  letra original; los pocos que no se pudieron confirmar conservan un reescalado limpio, así que nunca aparece un
+  carácter equivocado. La fuente japonesa de menús, tienda y objetos también está remasterizada.
 - **Cinemáticas en alta resolución**: cada fotograma de los FMV se reconoce mientras el juego lo decodifica y se
   sustituye por su versión en alta resolución (por ejemplo, reescalada con IA), así que los vídeos conservan el audio y
   el ritmo del propio juego y nunca se desincronizan. Los vídeos originales siguen disponibles desde el menú de opciones.
@@ -184,8 +219,12 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 | ✅ | Cuadros de texto, pantallas congeladas, sacudidas y destello de combate en HD |
 | ✅ | Motor de reemplazo de texturas HD (por imagen del juego, por paleta, compatible con DuckStation) |
 | ✅ | Capas de primer plano HD automáticas |
-| ✅ | **Letras de los diálogos en HD** en inglés |
-| 🚧 | Letras HD en castellano, francés, alemán e italiano (en pruebas) y después en japonés |
+| ✅ | **Letras de los diálogos en HD** en inglés, castellano, francés, alemán, italiano y japonés |
+| ✅ | Menús, tienda y nombres de objetos japoneses en HD |
+| ✅ | **Panorámico 16:9** (opcional), con el HUD y los menús en 4:3 |
+| ✅ | Pantallas "Now Loading" más rápidas (unos 3 s en vez de 8) |
+| ✅ | Un solo lanzador que elige el motor según el idioma |
+| ✅ | Texturas HD por idioma (pantalla de título traducida) |
 | ✅ | Juego a **60 FPS** por interpolación de polígonos (experimental) |
 | ✅ | Recorte de polígonos preciso (PGXP) |
 | ✅ | Antialiasing FXAA |
@@ -217,6 +256,24 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 ---
 
 ## Novedades
+
+**17-09-2026 — Panorámico, texto HD en todos los idiomas y un solo lanzador**
+- **Panorámico 16:9**, como opción del menú del Remaster. La escena 4:3 se amplía hasta llenar la pantalla y cada
+  cámara tiene su propio encuadre, para que los personajes no pierdan la cabeza ni los pies. El HUD, los cuadros de
+  texto, el menú de pausa, la pantalla de examinar objetos y los efectos se quedan en su sitio y tamaño 4:3, y el
+  modo a 60 FPS sigue funcionando. Con la opción desactivada, el juego se ve exactamente como antes.
+- **Letras HD terminadas** en castellano, francés, alemán e italiano, y ahora también en **japonés**: cada carácter
+  de los diálogos se identificó leyendo cada frase en su contexto y se comprobó después con la forma de la letra
+  original. Las que no se pudieron confirmar conservan un reescalado limpio en vez de arriesgar un kanji equivocado.
+  Los carteles de nombre japoneses y la fuente de menús, tienda y objetos también están en HD.
+- **"Now Loading" más rápido**: esas pantallas duran ahora unos 3 segundos en vez de 8.
+- **Traducciones completadas**: etiquetas de las fichas de armas (RATE, RANGE…), nombres de las Energías Parásitas
+  y algunas etiquetas de menú que seguían en inglés, abreviadas donde el hueco original es pequeño. La ayuda de Salir
+  indica ahora que cierra el juego.
+- **Un solo lanzador**: solo hay que abrir `pe2.exe`; el idioma elegido decide qué motor se ejecuta, y el motor
+  japonés vive ahora en su propia carpeta `engine`.
+- **Texturas HD por idioma**: el pack puede guardar una versión de cualquier imagen para cada idioma, que se usa para
+  la pantalla de título traducida, y todas las regiones muestran ya la misma pantalla de editora antes de la intro.
 
 **16-09-2026 — Letras de los diálogos en HD**
 - Las letras de los cuadros de diálogo y los carteles con el nombre de quien habla se dibujan ahora en **alta
@@ -322,6 +379,7 @@ Este proyecto se apoya en estos proyectos y personas increíbles:
 | [Teko](https://github.com/googlefonts/teko), [Rajdhani](https://github.com/itfoundry/rajdhani), [Barlow](https://github.com/jpt/barlow), [Noto Sans JP](https://github.com/notofonts/noto-cjk) | Indian Type Foundry, Jeremy Tribby, Google y Adobe | Tipografía de los menús del Remaster | SIL OFL 1.1 |
 | [CMU Sans Serif](https://cm-unicode.sourceforge.io/) | Donald Knuth (Computer Modern), Andrey V. Panov (CM-Unicode) | Letras HD de los diálogos | SIL OFL 1.1 |
 | Herramienta de sustitución de fuentes | u/Over_Transition_8907 | Idea original de las letras HD y referencia de glifos para identificar las letras del juego | — |
+| [Icono del juego](https://www.steamgriddb.com/) | Ghoulrx (SteamGridDB) | Icono del ejecutable del juego | — |
 
 Librerías: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
 [stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) y [zlib](https://zlib.net).
