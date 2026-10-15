@@ -109,28 +109,42 @@ Optional 16:9 mode: the scene fills the whole screen while the HUD, text boxes a
 
 ### 🖥️ Native PC version
 - **Static recompilation** of the original game into a native Windows executable. No emulator required.
-- **High internal resolution** rendering for sharp 3D models, up to **4K**.
+- **Vulkan renderer** by default, with every enhancement of the project (OpenGL is still available).
+- **High internal resolution**: the 3D scale goes from x1 to **x12** (3840×2880 internal), and the output resolution
+  from 1280×720 to **5120×2880**, with presets for the **Steam Deck (1280×800)** and **ultrawide** monitors.
+- **NVIDIA DLSS 4 / DLAA** and **AMD FSR 3.1**: temporal reconstruction with native antialiasing (DLAA / FSR Native
+  AA) or Quality, Balanced, Performance and Ultra Performance modes. The renderer feeds them real **motion vectors**
+  for every moving polygon, so characters stay sharp with no ghosting. FSR works on any graphics card.
 - **PGXP geometry precision**: no more wobbling polygons or warping textures, and precise polygon culling so distant
   characters no longer lose triangles.
+- **PGXP depth buffer and crack filling**: 3D models no longer flicker or show seams between their polygons at high
+  resolution.
+- **Flicker-free fullscreen**: borderless fullscreen that never switches the monitor's video mode, even when clicking.
 - **60 FPS gameplay** (experimental): the game logic still runs at its original 30 FPS, but the renderer builds an
   intermediate frame with every 3D polygon halfway between two game frames. Characters and enemies move at 60 FPS
   with no added input lag; text, HUD, videos and camera cuts are untouched.
 - **FXAA antialiasing** on the game image, leaving text, menus and videos crisp.
 - **Widescreen 16:9** (optional): the 4:3 scene is enlarged to fill the screen, trimming a little at the top and
   bottom, and every camera has its own framing so heads and feet stay in view. The HUD, text boxes, the pause menu and
-  item examination keep their original 4:3 place and size, and 60 FPS keeps working. The 4:3 mode is untouched.
+  item examination keep their original 4:3 place and size, and 60 FPS keeps working. The title screen stays in 4:3,
+  and the attract demo fills the screen with its logo moved to the corner. The 4:3 mode is untouched.
 - **A single launcher**: just open `pe2.exe`. The language you chose decides which engine runs, so the options menu
   always matches the game you are playing.
 
 ### ⚙️ Remaster options menu
 - Opens from **Options** in the main menu, before you start playing.
+- **Redesigned with three tabs**: **Graphics**, **Enhancements** and **Extras**, with option cells, ◄ ► selectors
+  and sliders.
 - **Original mode**: the game exactly as it was on PlayStation, with a choice of sharp or smooth texture and video
   filtering. **HD mode**: every enhancement enabled.
-- Internal resolution (**Original, HD, Full HD, 4K**), HD textures, HD videos, FXAA, scanlines, 60 FPS, fullscreen and
-  window size.
+- **Graphics**: language, mode, resolution (15 presets, from 720p to 5K), 3D scale (x1 to x12, showing the internal
+  size), fullscreen, antialiasing (FXAA), reconstruction (Native AA, Quality, Balanced, Performance, Ultra) and upscaler
+  (DLSS or FSR 3.1; the ones your graphics card can't run are skipped). Picking a resolution or a reconstruction mode
+  sets the recommended 3D scale for you.
+- **Enhancements**: HD textures, HD videos, 60 FPS and widescreen.
+- **Extras**: unlock every game mode from the start, keyboard setup and save game.
 - **Faster loads** in HD mode: doors and camera changes load in a fraction of the time, with music and cutscenes still
   in sync, and the **"Now Loading" screens take about 3 seconds instead of 8**.
-- **Widescreen** on or off.
 - When a change needs a restart, the game **saves it and restarts by itself**.
 - **Drawn in six languages**: the menu translates itself on the fly while you pick the language. Its lettering is
   generated from the Teko, Rajdhani, Barlow and Noto Sans JP typefaces, with the PlayStation button glyphs in color,
@@ -144,6 +158,11 @@ Optional 16:9 mode: the scene fills the whole screen while the HUD, text boxes a
 - **Also in combat**: with the weapon ready, the stick moves Aya instantly; release it and the game's own auto-aim
   turns her back to the locked target, ready to shoot. Starting to walk, run or lower the weapon no longer waits
   for the long animation blends.
+- **Steady through camera cuts**: holding the stick across several camera changes keeps Aya walking the same way,
+  with no back-and-forth between two cameras.
+- **Button prompts that match your controller**: menus and the button setup screen show the icons of the last device
+  you used, by physical position: **PlayStation, Xbox, Nintendo Switch, Steam Deck or keyboard**, in HD.
+- **Keyboard setup** from the Remaster menu, with the assigned keys shown in the game's own menus.
 
 ### ⚡ Game boosters
 Inspired by the quality-of-life boosters Square Enix added to its modern re-releases of classics like
@@ -160,11 +179,14 @@ icon in the top-right corner.
 
 Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○** keeps EXP at 6000 to upgrade Aya.
 
-### 💾 Save states and single disc
+### 💾 Saving and single disc
+- **Save anywhere**: **L1 + R1 + START** (or **Save game** in the Extras tab) opens the game's own save screen
+  wherever you are, outside combat and events, and the save brings you back to that very spot. Western languages
+  for now; the Japanese engine comes next.
 - **Save states menu** with 12 slots, a thumbnail and the date of each save (**SELECT + R1**).
 - **Single-disc experience**: both discs play as one game. When the story moves on to disc 2, or you continue a disc 2
   save from the title screen, the disc is swapped instantly and the disc change screen never appears.
-- **Exit** in the pause menu closes the game.
+- **Exit** in the pause menu takes you back to the main menu, and the title screen has an **Exit game** option.
 
 ### 🌍 One game, six languages
 - **English, Spanish, French, German, Italian and Japanese**, selected from the Remaster options menu. The game
@@ -186,7 +208,13 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 - **Text boxes, door transitions, screen shakes and the battle start flash stay in HD.** The original game froze the
   screen at 320×240 in all of them; the remaster keeps the full resolution.
 - **HD foreground layers** generated from the HD backgrounds, so objects in front of the characters match the new art.
-- **Remastered textures** for characters, enemies, weapons, HUD and menus.
+  Pieces that are an exact cut of the background are now drawn straight from the HD background, with clean edges.
+- **Readable text in the backgrounds**: signs, posters and labels that the upscaling had blurred or invented were
+  redone so they read as in the original.
+- **Remastered textures** for characters, enemies, weapons, HUD and menus. Characters keep their HD textures after
+  videos, screen effects and when loading a save state.
+- **HD menu font**, with its three palettes (outline, letter and core) redrawn in high resolution.
+- **Pixel-exact menu frames**: the lines of every box stay aligned with their panels at any resolution.
 - **HD dialogue lettering in all six languages**: every letter of the dialogue boxes and the speaker name tags is
   redrawn in high resolution, per language, and keeps the game's own colours (white, green selection, red and blue
   text). Latin alphabets use the CMU Sans Serif typeface; Japanese uses Noto Sans JP, slanted like the original.
@@ -209,7 +237,14 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 | Status | Feature |
 |:---:|---|
 | ✅ | Native Windows executable (static recompilation) |
-| ✅ | High resolution rendering (up to 4K) and PGXP geometry precision |
+| ✅ | High resolution rendering (3D scale up to x12, output up to 5K) and PGXP geometry precision |
+| ✅ | **Vulkan renderer** by default |
+| ✅ | **NVIDIA DLSS 4 / DLAA** and **AMD FSR 3.1**, with motion vectors |
+| ✅ | PGXP depth buffer and crack filling (no flickering models) |
+| ✅ | Button prompts for PlayStation, Xbox, Switch, Steam Deck and keyboard |
+| ✅ | Remaster menu with Graphics, Enhancements and Extras tabs |
+| ✅ | **Save anywhere** (L1 + R1 + START or from the menu) |
+| 🚧 | Linux and Steam Deck build (already running, testing on the device pending) |
 | ✅ | HD background replacement engine |
 | ✅ | HD text boxes, freeze-frames, screen shakes and battle flash |
 | ✅ | HD texture replacement engine (per game image, per palette, DuckStation compatible) |
@@ -251,6 +286,30 @@ Also available: **SELECT + △** keeps your BP at the maximum and **SELECT + ○
 ---
 
 ## News
+
+**2026-10-15 — Vulkan, DLSS and FSR, a new Remaster menu and controller prompts**
+- **Vulkan renderer**, now the default, with every enhancement of the project: HD pack, widescreen, 60 FPS, HD text
+  and videos. It is also lighter on the processor than the OpenGL one.
+- **NVIDIA DLSS 4 / DLAA and AMD FSR 3.1**: temporal antialiasing at the 3D scale, or reconstruction from a lower
+  resolution in Quality, Balanced, Performance and Ultra modes. The 60 FPS polygon matching now also produces real
+  **motion vectors**, so moving characters no longer leave a trail.
+- **New Remaster menu** in three tabs (Graphics, Enhancements, Extras) with 15 resolution presets up to 5K, including
+  Steam Deck and ultrawide, a 3D scale slider up to x12 that suggests the right value for each mode, and the choice
+  of upscaler.
+- **PGXP depth buffer and crack filling**: models no longer flicker or show seams at high resolution.
+- **Controller prompts**: the menus show the buttons of the controller you are using (PlayStation, Xbox, Switch,
+  Steam Deck or keyboard), in HD, and the keyboard can be set up from the menu.
+- **Unlock every game mode** from the Extras tab, without finishing the game first.
+- **Exit** in the pause menu now returns to the main menu, and the title screen can close the game.
+- **Widescreen**: the title screen stays in 4:3 and the attract demo fills the screen with its logo in the corner.
+- **Modern controls**: holding the stick across several camera cuts no longer makes Aya turn back and forth.
+- **HD pack**: readable text on signs and posters, foreground pieces drawn straight from the HD backgrounds, an HD
+  menu font, pixel-exact menu frames, and characters that keep their HD textures after videos, effects and save
+  states.
+- **Fullscreen** no longer blinks to black when clicking: the game tells the driver not to switch to exclusive mode.
+- **Save anywhere**: press **L1 + R1 + START** (or use the Extras tab) and the game opens its own save screen, as if you
+  were at a phone; loading that save puts Aya right where you saved.
+- In testing: a **Linux / Steam Deck** build that already runs.
 
 **2026-09-17 — Widescreen, HD text in every language and a single launcher**
 - **Widescreen 16:9**, as an option in the Remaster menu. The 4:3 scene is enlarged to fill the screen and each
@@ -364,13 +423,16 @@ This project stands on the shoulders of these amazing projects and people:
 | [Beetle PSX](https://github.com/libretro/beetle-psx-libretro) | libretro, based on Mednafen | Accuracy reference used by PSXRecomp | GPL-2.0 |
 | PGXP | iCatButler | Original geometry precision technique | — |
 | FXAA | Timothy Lottes (NVIDIA) | Original fast approximate antialiasing technique | — |
+| [NVIDIA DLSS](https://developer.nvidia.com/rtx/dlss) | NVIDIA | DLSS 4 / DLAA temporal reconstruction | NVIDIA RTX SDK license |
+| [AMD FidelityFX SDK](https://github.com/GPUOpen-LibrariesAndSDKs/FidelityFX-SDK) | AMD | FSR 3.1 temporal reconstruction | MIT |
+| [Free Controller & Key Prompts](https://thoseawesomeguys.com/prompts/) | Xelu | Button icons for each controller and the keyboard | CC0 1.0 |
 | [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth and contributors | Hardware and file archive documentation | — |
 | [Teko](https://github.com/googlefonts/teko), [Rajdhani](https://github.com/itfoundry/rajdhani), [Barlow](https://github.com/jpt/barlow), [Noto Sans JP](https://github.com/notofonts/noto-cjk) | Indian Type Foundry, Jeremy Tribby, Google and Adobe | Lettering of the Remaster menus | SIL OFL 1.1 |
 | [CMU Sans Serif](https://cm-unicode.sourceforge.io/) | Donald Knuth (Computer Modern), Andrey V. Panov (CM-Unicode) | HD dialogue lettering | SIL OFL 1.1 |
 | Font replacement tool | u/Over_Transition_8907 | Original HD letter idea and glyph reference used to identify the game's letters | — |
 | [Game icon](https://www.steamgriddb.com/) | Ghoulrx (SteamGridDB) | Icon of the game executable | — |
 
-Libraries: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
+Libraries: [Vulkan](https://www.vulkan.org) (Khronos), [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
 [stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) and [zlib](https://zlib.net).
 
 HD Remaster pack and project: **faligame**.
@@ -381,4 +443,6 @@ HD Remaster pack and project: **faligame**.
 
 This is a non-commercial fan project and is not affiliated with, endorsed by or sponsored by Square Enix.
 *Parasite Eve*, *Parasite Eve II* and *FINAL FANTASY VII* are trademarks of Square Enix Co., Ltd. All game content belongs to its respective owners.
+NVIDIA and DLSS are trademarks of NVIDIA Corporation. AMD and FidelityFX are trademarks of Advanced Micro Devices, Inc.
+PlayStation, Xbox, Nintendo Switch and Steam Deck are trademarks of their respective owners.
 This repository does not contain, and will never distribute, game files, BIOS files or copyrighted game assets.

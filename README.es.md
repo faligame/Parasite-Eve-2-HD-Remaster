@@ -109,9 +109,19 @@ Modo 16:9 opcional: la escena ocupa toda la pantalla y el HUD, los cuadros de te
 
 ### 🖥️ Versión nativa para PC
 - **Recompilación estática** del juego original en un ejecutable nativo de Windows. Sin emulador.
-- **Renderizado a alta resolución interna** para modelos 3D nítidos, hasta **4K**.
+- **Renderizador Vulkan** por defecto, con todas las mejoras del proyecto (OpenGL sigue disponible).
+- **Alta resolución interna**: la escala 3D va de x1 a **x12** (3840×2880 internos) y la resolución de salida de
+  1280×720 a **5120×2880**, con valores preparados para **Steam Deck (1280×800)** y monitores **ultrapanorámicos**.
+- **DLSS 4 / DLAA de NVIDIA** y **FSR 3.1 de AMD**: reconstrucción temporal con antialiasing nativo (DLAA / AA nativo
+  de FSR) o en los modos Calidad, Equilibrado, Rendimiento y Ultra rendimiento. El renderizador les da **vectores de
+  movimiento** reales de cada polígono que se mueve, así que los personajes se ven nítidos y sin estela. FSR funciona
+  en cualquier tarjeta gráfica.
 - **Precisión de geometría PGXP**: se acabaron los polígonos que tiemblan y las texturas que se deforman, y un
   recorte de polígonos preciso para que los personajes lejanos no pierdan triángulos.
+- **Buffer de profundidad PGXP y tapado de grietas**: los modelos 3D ya no parpadean ni muestran costuras entre sus
+  polígonos a alta resolución.
+- **Pantalla completa sin parpadeos**: pantalla completa sin bordes que nunca cambia el modo de vídeo del monitor,
+  tampoco al hacer clic.
 - **Juego a 60 FPS** (experimental): la lógica sigue a sus 30 FPS originales, pero el renderizador compone un
   fotograma intermedio con cada polígono 3D a medio camino entre dos fotogramas del juego. Personajes y enemigos se
   mueven a 60 FPS sin retraso añadido; texto, HUD, vídeos y cambios de cámara quedan intactos.
@@ -119,19 +129,25 @@ Modo 16:9 opcional: la escena ocupa toda la pantalla y el HUD, los cuadros de te
 - **Panorámico 16:9** (opcional): la escena 4:3 se amplía hasta llenar la pantalla, recortando un poco arriba y
   abajo, y cada cámara tiene su propio encuadre para que no se corten cabezas ni pies. El HUD, los cuadros de texto,
   el menú de pausa y la pantalla de examinar objetos conservan su sitio y tamaño 4:3, y los 60 FPS siguen
-  funcionando. El modo 4:3 queda intacto.
+  funcionando. La pantalla de título se queda en 4:3 y la demo ocupa toda la pantalla con su logotipo en la esquina.
+  El modo 4:3 queda intacto.
 - **Un solo lanzador**: basta con abrir `pe2.exe`. El idioma elegido decide qué motor se ejecuta, así que el menú de
   opciones siempre corresponde al juego que estás jugando.
 
 ### ⚙️ Menú de opciones del Remaster
 - Se abre desde **Opciones** en el menú principal, antes de empezar a jugar.
+- **Rediseñado en tres pestañas**: **Gráficos**, **Mejoras** y **Extras**, con celdas de opciones, selectores ◄ ►
+  y barras.
 - **Modo Original**: el juego tal cual era en PlayStation, con filtro nítido o suave para texturas y vídeos.
   **Modo HD**: todas las mejoras activadas.
-- Resolución interna (**Original, HD, Full HD, 4K**), texturas HD, vídeos HD, FXAA, scanlines, 60 FPS, pantalla
-  completa y tamaño de ventana.
+- **Gráficos**: idioma, modo, resolución (15 valores, de 720p a 5K), escala 3D (de x1 a x12, con el tamaño interno),
+  pantalla completa, antialiasing (FXAA), reconstrucción (AA nativo, Calidad, Equilibrado, Rendimiento, Ultra) y
+  reescalador (DLSS o FSR 3.1; se saltan los que tu gráfica no puede usar). Al elegir una resolución o un modo de
+  reconstrucción, la escala 3D recomendada se pone sola.
+- **Mejoras**: texturas HD, vídeos HD, 60 FPS y panorámico.
+- **Extras**: todos los modos de juego desbloqueados desde el principio, configuración del teclado y guardar partida.
 - **Cargas rápidas** en modo HD: puertas y cambios de cámara cargan en una fracción del tiempo, con la música y las
   cinemáticas sincronizadas, y las **pantallas "Now Loading" duran unos 3 segundos en vez de 8**.
-- **Panorámico** activado o desactivado.
 - Si un cambio necesita reiniciar, el juego **lo guarda y se reinicia solo**.
 - **Dibujado en seis idiomas**: el menú se traduce al vuelo mientras eliges el idioma. Su tipografía se genera a
   partir de las fuentes Teko, Rajdhani, Barlow y Noto Sans JP, con los botones de PlayStation a color, y cada
@@ -145,6 +161,12 @@ Modo 16:9 opcional: la escena ocupa toda la pantalla y el HUD, los cuadros de te
 - **También en combate**: con el arma lista, el stick mueve a Aya al instante; al soltarlo, el autoapuntado del
   propio juego la vuelve a girar hacia el objetivo fijado, lista para disparar. Empezar a andar, correr o bajar el
   arma ya no espera a los fundidos largos de animación.
+- **Estable entre cambios de cámara**: si mantienes el stick a través de varios cambios de plano, Aya sigue andando
+  en la misma dirección, sin ir y volver entre dos cámaras.
+- **Botones según tu mando**: los menús y la pantalla de configurar botones muestran los iconos del último
+  dispositivo que has usado, por posición física: **PlayStation, Xbox, Nintendo Switch, Steam Deck o teclado**, en HD.
+- **Configuración del teclado** desde el menú del Remaster, con las teclas asignadas a la vista en los menús del
+  propio juego.
 
 ### ⚡ Potenciadores
 Inspirados en los potenciadores de comodidad que Square Enix añadió a las reediciones modernas de clásicos como
@@ -161,11 +183,15 @@ icono en la esquina superior derecha.
 
 Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene la EXP en 6000 para mejorar a Aya.
 
-### 💾 Estados guardados y disco único
+### 💾 Guardado y disco único
+- **Guardar en cualquier sitio**: **L1 + R1 + START** (o **Guardar partida** en la pestaña Extras) abre la pantalla
+  de guardado del propio juego estés donde estés, fuera de combates y escenas, y la partida te devuelve a ese mismo
+  punto. De momento en los idiomas occidentales; el motor japonés vendrá después.
 - **Menú de estados guardados** con 12 ranuras, miniatura y fecha de cada una (**SELECT + R1**).
 - **Un solo disco**: los dos discos se juegan como un único juego. Cuando la historia pasa al disco 2, o continúas
   desde el título una partida del disco 2, el disco se cambia al instante y la pantalla de cambio de disco no aparece.
-- **Salir** en el menú de pausa cierra el juego.
+- **Salir** en el menú de pausa te devuelve al menú principal, y la pantalla de título tiene la opción **Salir del
+  juego**.
 
 ### 🌍 Un solo juego, seis idiomas
 - **Inglés, castellano, francés, alemán, italiano y japonés**, elegidos desde el menú de opciones del Remaster. El juego
@@ -189,8 +215,14 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
   mantienen en HD.** El juego original congelaba la pantalla a 320×240 en todos esos casos; la remasterización
   conserva la resolución completa.
 - **Capas de primer plano en HD** generadas a partir de los fondos HD, para que los objetos delante de los personajes
-  coincidan con el nuevo arte.
-- **Texturas remasterizadas** de personajes, enemigos, armas, HUD y menús.
+  coincidan con el nuevo arte. Las piezas que son un recorte exacto del fondo se dibujan ahora directamente con el
+  fondo HD, con los bordes limpios.
+- **Texto legible en los fondos**: carteles, pósteres y rótulos que el reescalado había emborronado o inventado se han
+  rehecho para que se lean como en el original.
+- **Texturas remasterizadas** de personajes, enemigos, armas, HUD y menús. Los personajes conservan sus texturas HD
+  después de los vídeos, de los efectos de pantalla y al cargar un estado guardado.
+- **Fuente de los menús en HD**, con sus tres paletas (contorno, letra y núcleo) redibujadas en alta resolución.
+- **Marcos de menú al píxel**: las líneas de cada recuadro quedan alineadas con sus paneles a cualquier resolución.
 - **Letras de los diálogos en HD en los seis idiomas**: cada letra de los cuadros de diálogo y de los carteles con el
   nombre de quien habla se redibuja en alta resolución, por idioma, y conserva los colores del propio juego (blanco,
   verde de selección, texto rojo y azul). Los alfabetos latinos usan la tipografía CMU Sans Serif; el japonés usa
@@ -214,7 +246,14 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 | Estado | Característica |
 |:---:|---|
 | ✅ | Ejecutable nativo de Windows (recompilación estática) |
-| ✅ | Renderizado a alta resolución (hasta 4K) y precisión de geometría PGXP |
+| ✅ | Renderizado a alta resolución (escala 3D hasta x12, salida hasta 5K) y precisión de geometría PGXP |
+| ✅ | **Renderizador Vulkan** por defecto |
+| ✅ | **DLSS 4 / DLAA de NVIDIA** y **FSR 3.1 de AMD**, con vectores de movimiento |
+| ✅ | Buffer de profundidad PGXP y tapado de grietas (modelos sin parpadeos) |
+| ✅ | Botones de PlayStation, Xbox, Switch, Steam Deck y teclado |
+| ✅ | Menú del Remaster con pestañas Gráficos, Mejoras y Extras |
+| ✅ | **Guardar en cualquier sitio** (L1 + R1 + START o desde el menú) |
+| 🚧 | Versión para Linux y Steam Deck (ya funciona; falta probarla en la consola) |
 | ✅ | Motor de reemplazo de fondos HD |
 | ✅ | Cuadros de texto, pantallas congeladas, sacudidas y destello de combate en HD |
 | ✅ | Motor de reemplazo de texturas HD (por imagen del juego, por paleta, compatible con DuckStation) |
@@ -256,6 +295,32 @@ Además: **SELECT + △** mantiene los BP al máximo y **SELECT + ○** mantiene
 ---
 
 ## Novedades
+
+**15-10-2026 — Vulkan, DLSS y FSR, un menú del Remaster nuevo y botones según el mando**
+- **Renderizador Vulkan**, ahora el de por defecto, con todas las mejoras del proyecto: pack HD, panorámico, 60 FPS,
+  texto y vídeos en HD. Además carga menos el procesador que el de OpenGL.
+- **DLSS 4 / DLAA de NVIDIA y FSR 3.1 de AMD**: antialiasing temporal a la escala 3D, o reconstrucción desde una
+  resolución menor en los modos Calidad, Equilibrado, Rendimiento y Ultra. El emparejado de polígonos de los 60 FPS da
+  ahora también **vectores de movimiento** reales, así que los personajes en movimiento ya no dejan estela.
+- **Menú del Remaster nuevo** en tres pestañas (Gráficos, Mejoras, Extras), con 15 resoluciones hasta 5K, incluidas
+  Steam Deck y ultrapanorámicas, una barra de escala 3D hasta x12 que propone el valor adecuado para cada modo, y la
+  elección del reescalador.
+- **Buffer de profundidad PGXP y tapado de grietas**: los modelos ya no parpadean ni muestran costuras a alta
+  resolución.
+- **Botones según el mando**: los menús muestran los botones del mando que estás usando (PlayStation, Xbox, Switch,
+  Steam Deck o teclado), en HD, y el teclado se puede configurar desde el menú.
+- **Guardar en cualquier sitio**: pulsa **L1 + R1 + START** (o usa la pestaña Extras) y el juego abre su propia
+  pantalla de guardado, como si estuvieras en un teléfono; al cargar esa partida, Aya aparece justo donde guardaste.
+- **Todos los modos de juego desbloqueados** desde la pestaña Extras, sin tener que terminar antes el juego.
+- **Salir** en el menú de pausa vuelve ahora al menú principal, y desde la pantalla de título se puede cerrar el juego.
+- **Panorámico**: la pantalla de título se queda en 4:3 y la demo ocupa toda la pantalla con su logotipo en la esquina.
+- **Controles modernos**: mantener el stick a través de varios cambios de cámara ya no hace que Aya vaya y vuelva.
+- **Pack HD**: texto legible en carteles y pósteres, piezas de primer plano dibujadas directamente con el fondo HD,
+  fuente de menús en HD, marcos de menú al píxel y personajes que conservan sus texturas HD después de vídeos, efectos
+  y estados guardados.
+- La **pantalla completa** ya no se va a negro al hacer clic: el juego le pide al controlador que no pase al modo
+  exclusivo.
+- En pruebas: una versión para **Linux / Steam Deck** que ya funciona.
 
 **17-09-2026 — Panorámico, texto HD en todos los idiomas y un solo lanzador**
 - **Panorámico 16:9**, como opción del menú del Remaster. La escena 4:3 se amplía hasta llenar la pantalla y cada
@@ -375,13 +440,16 @@ Este proyecto se apoya en estos proyectos y personas increíbles:
 | [Beetle PSX](https://github.com/libretro/beetle-psx-libretro) | libretro, basado en Mednafen | Referencia de precisión usada por PSXRecomp | GPL-2.0 |
 | PGXP | iCatButler | Técnica original de precisión de geometría | — |
 | FXAA | Timothy Lottes (NVIDIA) | Técnica original de antialiasing aproximado rápido | — |
+| [NVIDIA DLSS](https://developer.nvidia.com/rtx/dlss) | NVIDIA | Reconstrucción temporal DLSS 4 / DLAA | Licencia del SDK RTX de NVIDIA |
+| [AMD FidelityFX SDK](https://github.com/GPUOpen-LibrariesAndSDKs/FidelityFX-SDK) | AMD | Reconstrucción temporal FSR 3.1 | MIT |
+| [Free Controller & Key Prompts](https://thoseawesomeguys.com/prompts/) | Xelu | Iconos de botones de cada mando y del teclado | CC0 1.0 |
 | [PlayStation Specifications (psx-spx)](https://psx-spx.consoledev.net/) | Martin "nocash" Korth y colaboradores | Documentación del hardware y de los contenedores de archivos | — |
 | [Teko](https://github.com/googlefonts/teko), [Rajdhani](https://github.com/itfoundry/rajdhani), [Barlow](https://github.com/jpt/barlow), [Noto Sans JP](https://github.com/notofonts/noto-cjk) | Indian Type Foundry, Jeremy Tribby, Google y Adobe | Tipografía de los menús del Remaster | SIL OFL 1.1 |
 | [CMU Sans Serif](https://cm-unicode.sourceforge.io/) | Donald Knuth (Computer Modern), Andrey V. Panov (CM-Unicode) | Letras HD de los diálogos | SIL OFL 1.1 |
 | Herramienta de sustitución de fuentes | u/Over_Transition_8907 | Idea original de las letras HD y referencia de glifos para identificar las letras del juego | — |
 | [Icono del juego](https://www.steamgriddb.com/) | Ghoulrx (SteamGridDB) | Icono del ejecutable del juego | — |
 
-Librerías: [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
+Librerías: [Vulkan](https://www.vulkan.org) (Khronos), [SDL3](https://libsdl.org), [xxHash](https://github.com/Cyan4973/xxHash) (Yann Collet),
 [stb_image](https://github.com/nothings/stb) (Sean Barrett), [libchdr](https://github.com/rtissera/libchdr) y [zlib](https://zlib.net).
 
 Pack HD Remaster y proyecto: **faligame**.
@@ -392,4 +460,6 @@ Pack HD Remaster y proyecto: **faligame**.
 
 Este es un proyecto fan sin ánimo de lucro y no está afiliado, respaldado ni patrocinado por Square Enix.
 *Parasite Eve*, *Parasite Eve II* y *FINAL FANTASY VII* son marcas registradas de Square Enix Co., Ltd. Todo el contenido del juego pertenece a sus respectivos propietarios.
+NVIDIA y DLSS son marcas de NVIDIA Corporation. AMD y FidelityFX son marcas de Advanced Micro Devices, Inc.
+PlayStation, Xbox, Nintendo Switch y Steam Deck son marcas de sus respectivos propietarios.
 Este repositorio no contiene ni distribuirá nunca archivos del juego, BIOS ni recursos del juego protegidos por derechos de autor.
