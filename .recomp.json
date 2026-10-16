@@ -1,0 +1,11 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Parasite Eve II",
+  "wikidata": "Q2266405",
+  "system": "PS1",
+  "type": "recomp",
+  "project": "Parasite Eve II HD Remaster",
+  "status": "in-progress",
+  "targets": ["Windows"],
+  "toolchain": "psxrecomp"
+}
