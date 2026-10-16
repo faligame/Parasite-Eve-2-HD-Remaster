@@ -6,6 +6,6 @@
   "type": "recomp",
   "project": "Parasite Eve II HD Remaster",
   "status": "in-progress",
-  "targets": ["Windows"],
+  "targets": ["Windows", "Linux", "Steam Deck"],
   "toolchain": "psxrecomp"
 }
